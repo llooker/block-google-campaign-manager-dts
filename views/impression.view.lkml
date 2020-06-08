@@ -5,7 +5,8 @@ view: impression {
     type: string
     sql: "DoubleClick" ;;
     link: {
-      url: "https://googlecloud.looker.com/dashboards/20"
+      # url: "https://googlecloud.looker.com/dashboards/20"
+      url: "https://googlemarscisandbox.cloud.looker.com/dashboards/4"
       label: "DoubleClick Dashboard"
       icon_url: "http://www.looker.com/favicon.ico"
     }
@@ -75,7 +76,7 @@ view: impression {
     sql: ${TABLE}.Campaign_ID ;;
     link: {
       label: "Campaign Performance Dashboard for {{value}}"
-      url: "/dashboards/21?Campaign%20ID={{value}}"
+      url: "/dashboards/5?Campaign%20ID={{value}}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
