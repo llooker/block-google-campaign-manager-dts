@@ -9,7 +9,7 @@ include: "**/*.view"
 persist_for: "24 hours"
 
 explore: impression {
-  label: "Impressions"
+  label: "(1) Impressions"
   view_label: "Impressions"
 
   sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
@@ -46,6 +46,7 @@ explore: impression {
 }
 
 explore: impression_funnel {
+  label: "(2) Impression Funnel"
 
   sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
 
@@ -75,7 +76,7 @@ explore: impression_funnel {
 }
 
 explore: activity {
-  label: "Activities"
+  label: "(3) Activities"
   view_label: "Activities"
 
   sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
@@ -112,7 +113,7 @@ explore: activity {
 }
 
 explore: click {
-  label: "Clicks"
+  label: "(4) Clicks"
   view_label: "Clicks"
 
   sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
