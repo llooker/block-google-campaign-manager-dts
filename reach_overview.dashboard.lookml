@@ -850,74 +850,74 @@
     col: 18
     width: 6
     height: 2
-  - title: Campaign Performance over Time
-    name: Campaign Performance over Time
-    model: campaign_manager
-    explore: impression
-    type: looker_line
-    fields: [master.count_impressions, click.count_clicks, activity.count_activities,
-      master.dbm_revenue, match_table_campaigns.campaign_start_week]
-    fill_fields: [match_table_campaigns.campaign_start_week]
-    sorts: [match_table_campaigns.campaign_start_week desc]
-    limit: 10
-    dynamic_fields: [{table_calculation: click_through_rate, label: Click Through
-          Rate, expression: "${click.count_clicks} / ${master.count_impressions}",
-        value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
-        _type_hint: number}, {table_calculation: conversion_rate, label: Conversion
-          Rate, expression: "${activity.count_activities} / ${master.count_impressions}",
-        value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
-        _type_hint: number}, {table_calculation: cost_per_click, label: Cost per Click,
-        expression: "${click.count_clicks} / ${master.dbm_revenue}", value_format: !!null '',
-        value_format_name: usd, _kind_hint: measure, _type_hint: number}]
-    stacking: ''
-    show_value_labels: true
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    show_null_points: false
-    point_style: none
-    interpolation: monotone
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    series_types: {}
-    hidden_fields: [master.count_impressions, click.count_clicks, activity.count_activities,
-      master.dbm_revenue]
-    series_colors:
-      total_impressions: "#3B4260"
-      conversion_rate: "#39A736"
-      cost_per_click: "#3B4260"
-    y_axes: [{label: '', maxValue: 1.5, minValue: 0, orientation: left, showLabels: true,
-        showValues: true, tickDensity: custom, tickDensityCustom: '11', type: linear,
-        unpinAxis: false, valueFormat: !!null '', series: [{id: cost_per_click, name: Cost
-              per Click, axisId: cost_per_click}]}, {label: !!null '', maxValue: !!null '',
-        minValue: !!null '', orientation: right, showLabels: false, showValues: false,
-        tickDensity: default, tickDensityCustom: 5, type: linear, unpinAxis: false,
-        valueFormat: !!null '', series: [{id: conversion_rate, name: Conversion Rate,
-            axisId: conversion_rate}]}, {label: !!null '', maxValue: !!null '', minValue: !!null '',
-        orientation: right, showLabels: false, showValues: false, tickDensity: default,
-        tickDensityCustom: 5, type: linear, unpinAxis: false, valueFormat: !!null '',
-        series: [{id: click_through_rate, name: Click Through Rate, axisId: click_through_rate}]}]
-    label_color: []
-    hidden_series: []
-    row: 26
-    col: 0
-    width: 24
-    height: 8
+  # - title: Campaign Performance over Time
+  #   name: Campaign Performance over Time
+  #   model: campaign_manager
+  #   explore: impression
+  #   type: looker_line
+  #   fields: [impression.count, click.count, activity.count,
+  #     impression.dbm_revenue, match_table_campaigns.campaign_start_week]
+  #   fill_fields: [match_table_campaigns.campaign_start_week]
+  #   sorts: [match_table_campaigns.campaign_start_week desc]
+  #   limit: 10
+  #   dynamic_fields: [{table_calculation: click_through_rate, label: Click Through
+  #         Rate, expression: "${click.count} / ${impression.count}",
+  #       value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
+  #       _type_hint: number}, {table_calculation: conversion_rate, label: Conversion
+  #         Rate, expression: "${activity.count} / ${impression.count}",
+  #       value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
+  #       _type_hint: number}, {table_calculation: cost_per_click, label: Cost per Click,
+  #       expression: "${click.count} / ${impression.dbm_revenue}", value_format: !!null '',
+  #       value_format_name: usd, _kind_hint: measure, _type_hint: number}]
+  #   stacking: ''
+  #   show_value_labels: true
+  #   label_density: 25
+  #   legend_position: center
+  #   x_axis_gridlines: false
+  #   y_axis_gridlines: true
+  #   show_view_names: true
+  #   limit_displayed_rows: false
+  #   y_axis_combined: true
+  #   show_y_axis_labels: true
+  #   show_y_axis_ticks: true
+  #   y_axis_tick_density: default
+  #   y_axis_tick_density_custom: 5
+  #   show_x_axis_label: true
+  #   show_x_axis_ticks: true
+  #   x_axis_scale: auto
+  #   y_axis_scale_mode: linear
+  #   show_null_points: false
+  #   point_style: none
+  #   interpolation: monotone
+  #   ordering: none
+  #   show_null_labels: false
+  #   show_totals_labels: false
+  #   show_silhouette: false
+  #   totals_color: "#808080"
+  #   series_types: {}
+  #   hidden_fields: [impression.count_impressions, click.count_clicks, activity.count_activities,
+  #     impression.dbm_revenue]
+  #   series_colors:
+  #     total_impressions: "#3B4260"
+  #     conversion_rate: "#39A736"
+  #     cost_per_click: "#3B4260"
+  #   y_axes: [{label: '', maxValue: 1.5, minValue: 0, orientation: left, showLabels: true,
+  #       showValues: true, tickDensity: custom, tickDensityCustom: '11', type: linear,
+  #       unpinAxis: false, valueFormat: !!null '', series: [{id: cost_per_click, name: Cost
+  #             per Click, axisId: cost_per_click}]}, {label: !!null '', maxValue: !!null '',
+  #       minValue: !!null '', orientation: right, showLabels: false, showValues: false,
+  #       tickDensity: default, tickDensityCustom: 5, type: linear, unpinAxis: false,
+  #       valueFormat: !!null '', series: [{id: conversion_rate, name: Conversion Rate,
+  #           axisId: conversion_rate}]}, {label: !!null '', maxValue: !!null '', minValue: !!null '',
+  #       orientation: right, showLabels: false, showValues: false, tickDensity: default,
+  #       tickDensityCustom: 5, type: linear, unpinAxis: false, valueFormat: !!null '',
+  #       series: [{id: click_through_rate, name: Click Through Rate, axisId: click_through_rate}]}]
+  #   label_color: []
+  #   hidden_series: []
+  #   row: 26
+  #   col: 0
+  #   width: 24
+  #   height: 8
   filters:
   - name: Impression Date
     title: Impression Date

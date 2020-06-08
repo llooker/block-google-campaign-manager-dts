@@ -4,7 +4,7 @@ connection: "db-platform-sol-cm"
 include: "**/*.view"
 
 # include all the dashboards
-#include: "*.dashboard"
+include: "*.dashboard"
 
 persist_for: "24 hours"
 
@@ -48,7 +48,7 @@ explore: impression {
 explore: impression_funnel {
   label: "(2) Impression Funnel"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
+  sql_always_where: ${first_ad_impression_date} > '2020-06-05'  ;;
 
   join: match_table_campaigns {
     view_label: "Campaigns"

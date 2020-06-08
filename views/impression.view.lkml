@@ -555,6 +555,7 @@ view: impression {
   dimension: zip_postal_code {
     type: zipcode
     sql: ${TABLE}.ZIP_Postal_Code ;;
+    map_layer_name: us_zipcode_tabulation_areas
   }
 
   measure: count {
