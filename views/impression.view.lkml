@@ -79,6 +79,48 @@ view: impression {
       url: "/dashboards/5?Campaign%20ID={{value}}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
+    link: {
+      label: "View in Campaign Manager"
+      icon_url: "https://seeklogo.com/images/G/google-campaign-manager-logo-03026740FA-seeklogo.com.png"
+      url: "https://www.google.com/dfa/trafficking"
+    }
+    action: {
+      label: "Pause Campaign"
+      url: "https://##/"
+      icon_url: "https://cdn3.iconfinder.com/data/icons/shadcon/512/pause-512.png"
+    }
+    action: {
+      label: "Update Campaign Bid"
+      icon_url: "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/52-512.png"
+      url: "https://##/"
+      form_param: {
+        name: "Campaign Id"
+        type: string
+        default: "{{value}}"
+      }
+      form_param: {
+        name: "Campaign Name"
+        type: string
+        default: "{{match_table_campaigns.campaign_name._value}}"
+      }
+      form_param: {
+        name: "Billing Code"
+        type: string
+        default: "{{match_table_campaigns.billing_invoice_code._value}}"
+      }
+      form_param: {
+        name: "Start Date"
+        type: string
+        default: "{{match_table_campaigns.campaign_start_date._value}}"
+      }
+      form_param: {
+        name: "End Date"
+        type: string
+        default: "{{match_table_campaigns.campaign_end_date._value}}"
+      }
+
+    }
+
   }
 
   #match_table_cities

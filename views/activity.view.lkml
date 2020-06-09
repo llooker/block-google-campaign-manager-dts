@@ -3,7 +3,8 @@ view: activity {
 
   dimension_group: activity {
     type: time
-    sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
+    timeframes: [date, week, day_of_week, month, month_name, quarter, year]
+    sql: ${TABLE}._PARTITIONTIME ;;
   }
 
   dimension: pk {
