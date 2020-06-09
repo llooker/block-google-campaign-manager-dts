@@ -132,6 +132,7 @@ view: impression {
   dimension: country_code {
     map_layer_name: countries
     sql: CASE WHEN ${TABLE}.Country_Code = 'UK' THEN 'GB' ELSE ${TABLE}.Country_Code END ;;
+    drill_fields: [state_region,zip_postal_code]
   }
 
   dimension: creative_version {
@@ -583,6 +584,7 @@ view: impression {
   dimension: state_region {
     map_layer_name: us_states
     sql: ${TABLE}.State_Region ;;
+    drill_fields: [zip_postal_code]
   }
 
   dimension: u_value {
