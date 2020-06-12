@@ -12,7 +12,7 @@ explore: impression {
   label: "(1) Impressions"
   view_label: "Impressions"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
+  sql_always_where: _PARTITIONTIME > '2020-06-07' ;;
 
   join: match_table_ads {
     view_label: "Ads"
@@ -48,7 +48,7 @@ explore: impression {
 explore: impression_funnel {
   label: "(2) Impression Funnel"
 
-  sql_always_where: ${first_ad_impression_date} > '2020-06-05'  ;;
+  sql_always_where: ${first_ad_impression_date} > '2020-06-07'  ;;
 
   join: match_table_campaigns {
     view_label: "Campaigns"
@@ -79,7 +79,7 @@ explore: activity {
   label: "(3) Activities"
   view_label: "Activities"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
+  sql_always_where: _PARTITIONTIME > '2020-06-07' ;;
 
   join: match_table_ads {
     view_label: "Ads"
@@ -116,7 +116,7 @@ explore: click {
   label: "(4) Clicks"
   view_label: "Clicks"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
+  sql_always_where: _PARTITIONTIME > '2020-06-07' ;;
 
   join: match_table_ads {
     view_label: "Ads"
