@@ -12,9 +12,15 @@ view: impression {
     }
   }
 
+#   dimension_group: impression {
+#     type: time
+#     sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
+#   }
+
   dimension_group: impression {
     type: time
-    sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
+    timeframes: [date, week, day_of_week, month, month_name, quarter, year]
+    sql: ${TABLE}._PARTITIONTIME ;;
   }
 
   measure: active_view_eligible_impressions {
