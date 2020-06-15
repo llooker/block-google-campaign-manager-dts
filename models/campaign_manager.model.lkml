@@ -43,6 +43,12 @@ explore: impression {
     sql_on: ${impression.browser_platform_id} = ${match_table_browsers.browser_platform_id} ;;
     relationship: many_to_one
   }
+
+  join: match_table_creatives_8667 {
+    view_label: "Creatives"
+    sql_on: ${impression.rendering_id} = ${match_table_creatives_8667.rendering_id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: impression_funnel {
@@ -79,8 +85,7 @@ explore: activity {
   label: "(3) Activities"
   view_label: "Activities"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
-
+  sql_always_where: ${activity_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -3 DAY)) ;;
   join: match_table_ads {
     view_label: "Ads"
     sql_on: ${activity.ad_id} = ${match_table_ads.ad_id} ;;
@@ -116,8 +121,7 @@ explore: click {
   label: "(4) Clicks"
   view_label: "Clicks"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
-
+  sql_always_where: ${click_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -3 DAY)) ;;
   join: match_table_ads {
     view_label: "Ads"
     sql_on: ${click.ad_id} = ${match_table_ads.ad_id} ;;

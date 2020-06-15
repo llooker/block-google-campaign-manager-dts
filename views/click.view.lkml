@@ -8,7 +8,7 @@ view: click {
 
   dimension_group: click {
     type: time
-    timeframes: [date, week, day_of_week, month, month_name, quarter, year]
+    timeframes: [raw, date, week, day_of_week, month, month_name, quarter, year]
     sql: ${TABLE}._PARTITIONTIME ;;
   }
 
@@ -235,6 +235,19 @@ view: click {
   dimension: dbm_device_type {
     type: number
     sql: ${TABLE}.DBM_Device_Type ;;
+  }
+
+# slide34 - device type
+  dimension: DBM_Device_Type_Name {
+    type: string
+    sql: CASE
+          WHEN DBM_Device_Type=0 THEN "Computer"
+          WHEN DBM_Device_Type=1 THEN "Other"
+          WHEN DBM_Device_Type=2 THEN "Smartphone"
+          WHEN DBM_Device_Type=3 THEN "Tablet"
+          WHEN DBM_Device_Type=4 THEN "Smart TV"
+          ELSE 'Unknown'
+         END ;;
   }
 
   dimension: dbm_exchange_id {

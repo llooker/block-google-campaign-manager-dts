@@ -327,6 +327,19 @@ view: impression {
     sql: ${TABLE}.DBM_Device_Type ;;
   }
 
+# slide34 - device type
+  dimension: DBM_Device_Type_Name {
+    type: string
+    sql: CASE
+          WHEN DBM_Device_Type=0 THEN "Computer"
+          WHEN DBM_Device_Type=1 THEN "Other"
+          WHEN DBM_Device_Type=2 THEN "Smartphone"
+          WHEN DBM_Device_Type=3 THEN "Tablet"
+          WHEN DBM_Device_Type=4 THEN "Smart TV"
+          ELSE 'Unknown'
+         END ;;
+  }
+
   dimension: dbm_exchange_id {
     type: string
     sql: ${TABLE}.DBM_Exchange_ID ;;
@@ -621,6 +634,12 @@ view: impression {
     type: count_distinct
     sql: ${user_id} ;;
     drill_fields: [user_id, state_region, country_code]
+  }
+
+#   Seems to be several ways to calc Reach/Frequency. Need to confirm
+  measure: reach {
+    type: number
+    sql: 1.0*${distinct_users}/NULLIF(${count},0) ;;
   }
 
   measure: campaign_count {
