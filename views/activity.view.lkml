@@ -1,6 +1,7 @@
 view: activity {
   sql_table_name: `db-platform-sol.Comcast8667.p_activity_8667` ;;
 
+
   dimension_group: activity {
     type: time
     timeframes: [date, week, day_of_week, month, month_name, quarter, year]
@@ -12,7 +13,6 @@ view: activity {
     type: string
     sql: concat(${activity_id}, ${ad_id}, ${advertiser_id}, ${user_id}, cast(${TABLE}.Event_Time as string), ${event_type}, ${rendering_id}) ;;
   }
-
 
   measure: count_activities {
     type: count_distinct
@@ -248,6 +248,20 @@ view: activity {
     type: number
     sql: ${TABLE}.DBM_Device_Type ;;
   }
+
+  # slide34 - device type
+  dimension: DBM_Device_Type_Name {
+    type: string
+    sql: CASE
+          WHEN DBM_Device_Type=0 THEN "Computer"
+          WHEN DBM_Device_Type=1 THEN "Other"
+          WHEN DBM_Device_Type=2 THEN "Smartphone"
+          WHEN DBM_Device_Type=3 THEN "Tablet"
+          WHEN DBM_Device_Type=4 THEN "Smart TV"
+          ELSE 'Unknown'
+         END ;;
+  }
+
 
   dimension: dbm_exchange_id {
     type: string
@@ -490,6 +504,13 @@ view: activity {
     type: string
     sql: ${TABLE}.Other_Data ;;
   }
+
+  ## slide32 - u-variables { u4 }
+  dimension: product_purchased {
+    type: string
+    sql: TRIM(REGEXP_EXTRACT(${other_data}, r"u4=(.+?);")) ;;
+  }
+
 
   dimension: partner1_id {
     type: string

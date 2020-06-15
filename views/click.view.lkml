@@ -1,9 +1,15 @@
 view: click {
   sql_table_name: `db-platform-sol.Comcast8667.p_click_8667` ;;
 
+#   dimension_group: click {
+#     type: time
+#     sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
+#   }
+
   dimension_group: click {
     type: time
-    sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
+    timeframes: [date, week, day_of_week, month, month_name, quarter, year]
+    sql: ${TABLE}._PARTITIONTIME ;;
   }
 
   dimension: ad_id {

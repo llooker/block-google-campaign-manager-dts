@@ -1,20 +1,22 @@
 view: impression {
   sql_table_name: `db-platform-sol.Comcast8667.p_impression_8667` ;;
 
-  dimension: block_name {
-    type: string
-    sql: "DoubleClick" ;;
-    link: {
-      # url: "https://googlecloud.looker.com/dashboards/20"
-      url: "https://googlemarscisandbox.cloud.looker.com/dashboards/4"
-      label: "DoubleClick Dashboard"
-      icon_url: "http://www.looker.com/favicon.ico"
-    }
-  }
+
+#   dimension: block_name {
+#     type: string
+#     sql: "DoubleClick" ;;
+#     link: {
+#       # url: "https://googlecloud.looker.com/dashboards/20"
+#       url: "https://googlemarscisandbox.cloud.looker.com/dashboards/4"
+#       label: "DoubleClick Dashboard"
+#       icon_url: "http://www.looker.com/favicon.ico"
+#     }
+#   }
 
   dimension_group: impression {
     type: time
-    sql: _PARTITIONTIME ;;
+    timeframes: [raw, date, week, day_of_week, month, month_name, quarter, year]
+    sql: ${TABLE}._PARTITIONTIME ;;
   }
 
   measure: active_view_eligible_impressions {
@@ -519,6 +521,13 @@ view: impression {
     type: string
     sql: ${TABLE}.DBM_URL ;;
   }
+
+  # slide35 - URLs & Domains
+  dimension: domain {
+    type: string
+    sql: REGEXP_EXTRACT(${dbm_url}, r"(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/\n]+)") ;;
+  }
+
 
   dimension: dbm_view_state {
     type: string
