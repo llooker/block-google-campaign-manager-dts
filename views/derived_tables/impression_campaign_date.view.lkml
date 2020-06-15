@@ -8,7 +8,7 @@
 #      ;;
 # }
 
-include: "impression.view.lkml"
+include: "/**/impression.view.lkml"
 view: impression_campaign_date {
   extends: [impression]
   sql_table_name: ( SELECT * FROM

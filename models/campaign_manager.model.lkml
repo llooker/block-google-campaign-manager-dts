@@ -1,7 +1,7 @@
 connection: "db-platform-sol-cm"
 
 # include all the views
-include: "**/*.view"
+include: "/**/*.view"
 
 # include all the dashboards
 # include: "*.dashboard"
@@ -12,7 +12,7 @@ explore: impression {
   label: "(1) Impressions"
   view_label: "Impressions"
 
-  sql_always_where: _PARTITIONTIME > '2020-06-05' ;;
+  sql_always_where: ${impression_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -3 DAY)) ;;
 
   join: match_table_ads {
     view_label: "Ads"

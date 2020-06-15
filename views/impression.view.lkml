@@ -14,7 +14,7 @@ view: impression {
 
   dimension_group: impression {
     type: time
-    sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
+    sql: _PARTITIONTIME ;;
   }
 
   measure: active_view_eligible_impressions {
