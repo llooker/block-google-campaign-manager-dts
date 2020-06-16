@@ -578,6 +578,14 @@ view: impression {
     sql: ${TABLE}.Operating_System_ID ;;
   }
 
+  dimension: operating_system_id_key {
+    type: number
+    sql: IF(CAST(${operating_system_id} AS INT64) > 22,
+       CAST(${operating_system_id} AS INT64),
+       POWER(2,CAST(${operating_system_id} AS INT64))) ;;
+
+  }
+
   dimension: partner1_id {
     type: string
     sql: ${TABLE}.Partner1_ID ;;

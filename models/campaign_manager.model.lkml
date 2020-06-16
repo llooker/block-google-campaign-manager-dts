@@ -49,6 +49,11 @@ explore: impression {
     sql_on: ${impression.rendering_id} = ${match_table_creatives_8667.rendering_id} ;;
     relationship: many_to_one
   }
+  join: match_table_operating_systems_8667 {
+    view_label: "Operating System"
+    sql_on: ${impression.operating_system_id_key} = ${match_table_operating_systems_8667.operating_system_id_key} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: impression_funnel {
@@ -150,5 +155,12 @@ explore: click {
     view_label: "Browsers"
     sql_on: ${click.browser_platform_id} = ${match_table_browsers.browser_platform_id} ;;
     relationship: many_to_one
+  }
+}
+
+explore: data_health_check {
+  view_name: redaction_combined
+  always_filter: {
+    filters: [redaction_combined.partition: "last 7 days"]
   }
 }

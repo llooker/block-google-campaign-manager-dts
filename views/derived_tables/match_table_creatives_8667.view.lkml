@@ -95,8 +95,4 @@ derived_table: {
     sql: ${TABLE}.Rendering_ID ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: []
-  }
 }
