@@ -43,18 +43,18 @@ view: redaction_combined {
 
   measure: total_count {
     type: count
-    sql: ${user_id} ;;
+#     sql: ${user_id} ;;
   }
 
   measure: total_redacted {
     type: count
-    sql: ${user_id} ;;
+#     sql: ${user_id} ;;
     filters: [redacted: "yes"]
   }
 
   measure: total_filled {
     type: count
-    sql: ${user_id} ;;
+#     sql: ${user_id} ;;
     filters: [filled: "yes"]
   }
 
