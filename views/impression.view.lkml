@@ -656,6 +656,12 @@ view: impression {
     drill_fields: [campaign_id, match_table_campaigns.campaign_name, count, distinct_users]
   }
 
+  measure: impressions_per_user {
+    type: number
+    sql: ${count_impressions}/NULLIF(${distinct_users},0) ;;
+    value_format_name: decimal_1
+  }
+
   measure: ad_count {
     type: count_distinct
     sql: ${ad_id} ;;
