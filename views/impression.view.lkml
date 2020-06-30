@@ -641,16 +641,25 @@ view: impression {
   }
 
   measure: distinct_users {
+    label: "Reach Count"
     type: count_distinct
     sql: ${user_id} ;;
     drill_fields: [user_id, state_region, country_code]
   }
 
 #   Seems to be several ways to calc Reach/Frequency. Need to confirm
-  measure: reach {
+  measure: reach_percentage {
     type: number
     sql: 1.0*${distinct_users}/NULLIF(${count},0) ;;
+    value_format_name: percent_2
   }
+
+  measure: average_frequency {
+    type: number
+    sql: 1.0*${count}/${distinct_users} ;;
+    value_format_name: decimal_2
+  }
+
 
   measure: campaign_count {
     type: count_distinct

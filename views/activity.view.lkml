@@ -471,7 +471,7 @@ view: activity {
   dimension_group: event {
     type: time
     datatype: epoch
-    sql: ${TABLE}.Event_Time/1000000 ;;
+    sql: CAST(${TABLE}.Event_Time/1000000 as INT64) ;;
   }
 
   dimension: event_type {
