@@ -26,7 +26,7 @@ view: impression_funnel {
             from ${impression.SQL_TABLE_NAME} --`ekoblov-test.dcm1684.impression_1684`
             where user_id <> '' and user_id is not null
 
-            and _PARTITIONTIME > '2020-06-05'
+            and _PARTITIONTIME > '2020-06-20'
 
             group by 1,2,3,4) as user_impression_metrics
 
@@ -42,7 +42,7 @@ view: impression_funnel {
             from ${click.SQL_TABLE_NAME} -- `ekoblov-test.dcm1684.click_1684`
             where user_id <> '' and user_id is not null
 
-            and _PARTITIONTIME > '2020-06-05'
+            and _PARTITIONTIME > '2020-06-20'
 
             group by 1,2,3,4) as user_click_metrics
 
@@ -68,7 +68,7 @@ view: impression_funnel {
                 where user_id <> '' and user_id is not null
                 and event_type = 'CONVERSION'
 
-                and _PARTITIONTIME > '2020-06-05'
+                and _PARTITIONTIME > '2020-06-20'
 
                 group by 1,2,3,4) as user_activity_metrics
             on user_impression_metrics.user_id = user_activity_metrics.user_id
@@ -127,7 +127,7 @@ view: impression_funnel {
     type: time
     datatype: epoch
     sql: cast(${TABLE}.first_impression/1000000 as int64) ;;
-    timeframes: [date, week, month, year]
+    timeframes: [raw ,date, week, month, year]
     view_label: "Users"
   }
 

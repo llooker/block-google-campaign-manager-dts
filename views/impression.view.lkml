@@ -34,7 +34,8 @@ view: impression {
   measure: count_impressions {
     type: count_distinct
     sql: ${pk} ;;
-    drill_fields: [user_id, state_region, country_code, imrematch_table_ads.ad_name, match_table_ads.ad_type, match_table_campaigns.campaign_name]
+    drill_fields: [campaign_id, site_id_dcm]
+#     drill_fields: [user_id, state_region, country_code, imrematch_table_ads.ad_name, match_table_ads.ad_type, match_table_campaigns.campaign_name]
   }
 
   measure: active_view_measurable_impressions {
@@ -635,7 +636,8 @@ view: impression {
 
   measure: count {
     type: count
-    drill_fields: [ user_id, state_region, country_code, imrematch_table_ads.ad_name, match_table_ads.ad_type, match_table_campaigns.campaign_name]
+    drill_fields: [campaign_id, site_id_dcm]
+#     drill_fields: [ user_id, state_region, country_code, imrematch_table_ads.ad_name, match_table_ads.ad_type, match_table_campaigns.campaign_name]
   }
 
   measure: distinct_users {
@@ -660,6 +662,7 @@ view: impression {
     type: number
     sql: ${count_impressions}/NULLIF(${distinct_users},0) ;;
     value_format_name: decimal_1
+    drill_fields: [campaign_id, site_id_dcm]
   }
 
   measure: ad_count {

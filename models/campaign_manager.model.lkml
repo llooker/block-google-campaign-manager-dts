@@ -59,7 +59,7 @@ explore: impression {
 explore: impression_funnel {
   label: "(2) Impression Funnel"
 
-  sql_always_where: ${first_ad_impression_date} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -3 DAY))  ;;
+  sql_always_where: TIMESTAMP(${first_ad_impression_date}) > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -3 DAY))  ;;
 
   join: match_table_campaigns {
     view_label: "Campaigns"
