@@ -17,6 +17,15 @@ view: match_table_campaigns {
     sql: ${TABLE}.Campaign ;;
   }
 
+#   dimension: campaign_title {
+#     type: string
+#     sql: ${campaign_name} ;;
+#     html:
+#     <p><font color= "#4285F4"size="4.5" weight="bold"><i class="fa fa-eye" aria-hidden="true"></i> <strong>{{rendered_value}}</strong> </font></p>
+#
+#     ;;
+#   }
+
   dimension_group: campaign_end {
     type: time
     datatype: yyyymmdd

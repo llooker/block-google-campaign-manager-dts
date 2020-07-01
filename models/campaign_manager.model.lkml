@@ -54,6 +54,12 @@ explore: impression {
     sql_on: ${impression.operating_system_id_key} = ${match_table_operating_systems_8667.operating_system_id_key} ;;
     relationship: many_to_one
   }
+
+  join: user_impression_facts {
+    relationship: one_to_one
+    sql_on: ${impression.user_id} = ${user_impression_facts.user_id} and ${impression.campaign_id} = ${user_impression_facts.campaign_id} ;;
+  }
+
 }
 
 explore: impression_funnel {
