@@ -79,7 +79,7 @@ view: impression {
     sql: ${TABLE}.Campaign_ID ;;
     link: {
       label: "Campaign Performance Dashboard for {{value}}"
-      url: "/dashboards/5?Campaign%20ID={{value}}"
+      url: "/dashboards-next/5?Campaign%20ID={{value}}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
     link: {
