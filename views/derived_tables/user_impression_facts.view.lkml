@@ -42,7 +42,7 @@ GROUP BY 1,2
     label: "Impressions Per User - Tiered"
     type: tier
     style: integer
-    tiers: [1,2,3,4,5,6,7,8,9]
+    tiers: [1,6,11,16,21,26]
     sql: ${count_impressions} ;;
   }
 
