@@ -12,7 +12,7 @@ explore: impression {
   label: "(1) Impressions"
   view_label: "Impressions"
 
-  sql_always_where: ${impression_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -7 DAY)) ;;
+  sql_always_where: ${impression_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY)) ;;
 
   join: match_table_ads {
     view_label: "Ads"
@@ -65,7 +65,7 @@ explore: impression {
 explore: impression_funnel {
   label: "(2) Impression Funnel"
 
-  sql_always_where: TIMESTAMP(${first_ad_impression_date}) > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -7 DAY))  ;;
+  sql_always_where: TIMESTAMP(${first_ad_impression_date}) > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY))  ;;
 #   sql_always_where: ${first_ad_impression_date} > '2020-06-10'  ;;
 
   join: match_table_campaigns {
@@ -97,7 +97,7 @@ explore: activity {
   label: "(3) Activities"
   view_label: "Activities"
 
-  sql_always_where: ${activity_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -7 DAY)) ;;
+  sql_always_where: ${activity_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY)) ;;
 
   join: match_table_ads {
     view_label: "Ads"
@@ -134,7 +134,7 @@ explore: click {
   label: "(4) Clicks"
   view_label: "Clicks"
 
-  sql_always_where: ${click_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -7 DAY)) ;;
+  sql_always_where: ${click_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY)) ;;
 
   join: match_table_ads {
     view_label: "Ads"

@@ -1,6 +1,8 @@
+include: "date_comparison.view"
+
 view: activity {
   sql_table_name: `db-platform-sol.Comcast8667.p_activity_8667` ;;
-
+  extends: [date_comparison]
 
   dimension_group: activity {
     type: time

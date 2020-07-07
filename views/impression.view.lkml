@@ -1,17 +1,8 @@
+include: "date_comparison.view.lkml"
+
 view: impression {
   sql_table_name: `db-platform-sol.Comcast8667.p_impression_8667` ;;
-
-
-#   dimension: block_name {
-#     type: string
-#     sql: "DoubleClick" ;;
-#     link: {
-#       # url: "https://googlecloud.looker.com/dashboards/20"
-#       url: "https://googlemarscisandbox.cloud.looker.com/dashboards/4"
-#       label: "DoubleClick Dashboard"
-#       icon_url: "http://www.looker.com/favicon.ico"
-#     }
-#   }
+  extends: [date_comparison]
 
   dimension_group: impression {
     type: time
@@ -565,6 +556,7 @@ view: impression {
 
   dimension_group: event {
     type: time
+    timeframes: [raw, date, week, day_of_week, month, month_name, quarter, year]
     datatype: epoch
     sql: CAST(${TABLE}.Event_Time/1000000 as INT64) ;;
   }
