@@ -69,51 +69,52 @@ view: impression {
     type: string
     sql: ${TABLE}.Campaign_ID ;;
     link: {
-      label: "Campaign Performance Dashboard for {{value}}"
+      label: "Campaign Performance Dashboard"
       url: "/dashboards-next/5?Campaign%20ID={{value}}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
     link: {
       label: "View in Campaign Manager"
       icon_url: "https://seeklogo.com/images/G/google-campaign-manager-logo-03026740FA-seeklogo.com.png"
-      url: "https://www.google.com/dfa/trafficking"
+      # url: "https://www.google.com/dfa/trafficking"
+      url: "https://www.google.com/dfa/trafficking/#/accounts/@{cm_network_id}/campaigns/{{value}}/explorer?"
     }
-    action: {
-      label: "Pause Campaign"
-      url: "https://##/"
-      icon_url: "https://cdn3.iconfinder.com/data/icons/shadcon/512/pause-512.png"
-    }
-    action: {
-      label: "Update Campaign Bid"
-      icon_url: "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/52-512.png"
-      url: "https://##/"
-      form_param: {
-        name: "Campaign Id"
-        type: string
-        default: "{{value}}"
-      }
-      form_param: {
-        name: "Campaign Name"
-        type: string
-        default: "{{match_table_campaigns.campaign_name._value}}"
-      }
-      form_param: {
-        name: "Billing Code"
-        type: string
-        default: "{{match_table_campaigns.billing_invoice_code._value}}"
-      }
-      form_param: {
-        name: "Start Date"
-        type: string
-        default: "{{match_table_campaigns.campaign_start_date._value}}"
-      }
-      form_param: {
-        name: "End Date"
-        type: string
-        default: "{{match_table_campaigns.campaign_end_date._value}}"
-      }
+    # action: {
+    #   label: "Pause Campaign"
+    #   url: "https://##/"
+    #   icon_url: "https://cdn3.iconfinder.com/data/icons/shadcon/512/pause-512.png"
+    # }
+    # action: {
+    #   label: "Update Campaign Bid"
+    #   icon_url: "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/52-512.png"
+    #   url: "https://##/"
+    #   form_param: {
+    #     name: "Campaign Id"
+    #     type: string
+    #     default: "{{value}}"
+    #   }
+    #   form_param: {
+    #     name: "Campaign Name"
+    #     type: string
+    #     default: "{{match_table_campaigns.campaign_name._value}}"
+    #   }
+    #   form_param: {
+    #     name: "Billing Code"
+    #     type: string
+    #     default: "{{match_table_campaigns.billing_invoice_code._value}}"
+    #   }
+    #   form_param: {
+    #     name: "Start Date"
+    #     type: string
+    #     default: "{{match_table_campaigns.campaign_start_date._value}}"
+    #   }
+    #   form_param: {
+    #     name: "End Date"
+    #     type: string
+    #     default: "{{match_table_campaigns.campaign_end_date._value}}"
+    #   }
 
-    }
+    # }
 
   }
 
@@ -628,15 +629,14 @@ view: impression {
 
   measure: count {
     type: count
-    drill_fields: [campaign_id, site_id_dcm]
-#     drill_fields: [ user_id, state_region, country_code, imrematch_table_ads.ad_name, match_table_ads.ad_type, match_table_campaigns.campaign_name]
+    drill_fields: [campaign_id, site_id_dcm, impressions_per_user]
   }
 
   measure: distinct_users {
     label: "Reach Count"
     type: count_distinct
     sql: ${user_id} ;;
-    drill_fields: [user_id, state_region, country_code]
+    drill_fields: [campaign_id, site_id_dcm, impressions_per_user]
   }
 
 #   Seems to be several ways to calc Reach/Frequency. Need to confirm
@@ -656,7 +656,7 @@ view: impression {
   measure: campaign_count {
     type: count_distinct
     sql: ${campaign_id} ;;
-    drill_fields: [campaign_id, match_table_campaigns.campaign_name, count, distinct_users]
+    drill_fields: [campaign_id, match_table_campaigns.campaign_name, count, distinct_users, impressions_per_user]
   }
 
   measure: impressions_per_user {
