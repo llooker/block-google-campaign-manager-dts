@@ -13,12 +13,6 @@ LEFT JOIN (select * from `db-platform-sol.Comcast8667.match_table_campaigns_8667
 WHERE impression._PARTITIONTIME > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -7 DAY))
 GROUP BY 1,2
     ;;
-#     explore_source: impression {
-#       column: user_id {}
-#       column: campaign_id {}
-#       column: count_impressions {}
-#     }
-
 
   }
 

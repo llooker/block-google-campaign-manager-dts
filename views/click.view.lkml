@@ -4,10 +4,6 @@ view: click {
   sql_table_name: `db-platform-sol.Comcast8667.p_click_8667` ;;
   extends: [date_comparison]
 
-#   dimension_group: click {
-#     type: time
-#     sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
-#   }
 
   dimension_group: click {
     type: time

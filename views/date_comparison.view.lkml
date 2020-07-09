@@ -1,16 +1,6 @@
 view: date_comparison {
   extension: required
 
-  # filter: date_comparison_filter {
-  #   view_label: "Date Comparison"
-  #   type: date
-  # }
-
-  # dimension: test {
-  #   type: string
-  #   sql: 'test' ;;
-  # }
-
   parameter: comparison_type {
     label: "Date Range"
     view_label: "Date Comparison"

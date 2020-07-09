@@ -320,7 +320,6 @@ view: impression {
     sql: ${TABLE}.DBM_Device_Type ;;
   }
 
-# slide34 - device type
   dimension: DBM_Device_Type_Name {
     type: string
     sql: CASE
@@ -528,12 +527,10 @@ view: impression {
     sql: ${TABLE}.DBM_URL ;;
   }
 
-  # slide35 - URLs & Domains
   dimension: domain {
     type: string
     sql: REGEXP_EXTRACT(${dbm_url}, r"(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/\n]+)") ;;
   }
-
 
   dimension: dbm_view_state {
     type: string
@@ -639,7 +636,6 @@ view: impression {
     drill_fields: [campaign_id, site_id_dcm, impressions_per_user]
   }
 
-#   Seems to be several ways to calc Reach/Frequency. Need to confirm
   measure: reach_percentage {
     type: number
     sql: 1.0*${distinct_users}/NULLIF(${count},0) ;;
@@ -651,7 +647,6 @@ view: impression {
     sql: 1.0*${count}/${distinct_users} ;;
     value_format_name: decimal_2
   }
-
 
   measure: campaign_count {
     type: count_distinct

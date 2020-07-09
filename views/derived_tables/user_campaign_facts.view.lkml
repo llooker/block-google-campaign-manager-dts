@@ -9,8 +9,7 @@ view: user_campaign_facts {
         min(impression_funnel.first_impression) AS first_campaign_impression_date,
         max(impression_funnel.latest_click) AS latest_campaign_click_date,
         max(impression_funnel.latest_activity) AS latest_campaign_activity_date,
-        max(impression_funnel.latest_impression) AS latest_campaign_impression_date --,
-        --count(impression_funnel.count_impressions) as impressions_per_user
+        max(impression_funnel.latest_impression) AS latest_campaign_impression_date
       FROM ${impression_funnel.SQL_TABLE_NAME} AS impression_funnel
       GROUP BY 1,2
        ;;
@@ -22,19 +21,6 @@ view: user_campaign_facts {
     type: string
     sql: ${TABLE}.impression_funnel_user_id ;;
   }
-
-#   dimension: impressions_per_user {
-#     type: number
-#     sql: ${TABLE}.impressions_per_user ;;
-#   }
-#
-#   dimension: impressions_per_user_tiered {
-#     type: tier
-#     style: integer
-#     tiers: [1,2,3,4,5,6,7,8,9]
-#     sql: ${impressions_per_user} ;;
-#   }
-
 
   dimension: campaign_id {
     type: string

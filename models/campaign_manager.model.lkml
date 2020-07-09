@@ -1,10 +1,11 @@
+# amend DB connection
 connection: "db-platform-sol-cm"
 
 # include all the views
 include: "/**/*.view"
 
 # include all the dashboards
-# include: "*.dashboard"
+# include: "/**/*.dashboard"
 
 persist_for: "24 hours"
 
@@ -66,7 +67,6 @@ explore: impression_funnel {
   label: "(2) Impression Funnel"
 
   sql_always_where: TIMESTAMP(${first_ad_impression_date}) > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY))  ;;
-#   sql_always_where: ${first_ad_impression_date} > '2020-06-10'  ;;
 
   join: match_table_campaigns {
     view_label: "Campaigns"
@@ -168,6 +168,7 @@ explore: click {
 }
 
 explore: data_health_check {
+  label: "(5) Data Health Check"
   view_name: redaction_combined
   always_filter: {
     filters: [redaction_combined.partition: "last 7 days"]

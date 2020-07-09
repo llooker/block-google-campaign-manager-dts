@@ -16,11 +16,6 @@ view: redaction_combined {
     default_value: "7 days"
   }
 
-#  User_ID,
-#     File_Type,
-#     IF(User_ID="0" ,1,0) AS Redacted,
-#     IF(User_ID!="0",1,0) AS Filled
-
   dimension: user_id {
     type: string
     sql: ${TABLE}.User_ID ;;
