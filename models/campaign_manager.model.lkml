@@ -5,7 +5,7 @@ connection: "db-platform-sol-cm"
 include: "/**/*.view"
 
 # include all the dashboards
-# include: "/**/*.dashboard"
+include: "/dashboards/*.dashboard"
 
 persist_for: "24 hours"
 
