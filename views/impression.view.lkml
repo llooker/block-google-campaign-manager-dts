@@ -70,15 +70,15 @@ view: impression {
     sql: ${TABLE}.Campaign_ID ;;
     link: {
       label: "Campaign Performance Dashboard"
-      url: "/dashboards-next/5?Campaign%20ID={{value}}"
+      url: "/dashboards/campaign_manager::2_campaign_overview?Campaign%20ID={{value}}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
     link: {
       label: "View in Campaign Manager"
       icon_url: "https://seeklogo.com/images/G/google-campaign-manager-logo-03026740FA-seeklogo.com.png"
-      # url: "https://www.google.com/dfa/trafficking"
       url: "https://www.google.com/dfa/trafficking/#/accounts/@{cm_network_id}/campaigns/{{value}}/explorer?"
     }
+
     # action: {
     #   label: "Pause Campaign"
     #   url: "https://##/"
@@ -113,7 +113,6 @@ view: impression {
     #     type: string
     #     default: "{{match_table_campaigns.campaign_end_date._value}}"
     #   }
-
     # }
 
   }
