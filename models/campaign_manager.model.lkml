@@ -1,10 +1,8 @@
 # amend DB connection
 connection: "db-platform-sol-cm"
 
-# include all the views
+# include all the views + dashboards
 include: "/**/*.view"
-
-# include all the dashboards
 include: "/dashboards/*.dashboard"
 
 persist_for: "24 hours"

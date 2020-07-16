@@ -1,7 +1,7 @@
 project_name: "campaign_manager_block"
 
 
-# **** Please insert/amend the CM Network ID to match your own. *****
+# **** Please insert CM Network ID below. *****
 constant: cm_network_id {
-  value: ""  # e.g. value: "8667"
+  value: ""
 }
