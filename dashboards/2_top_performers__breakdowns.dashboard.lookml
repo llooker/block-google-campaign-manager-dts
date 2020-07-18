@@ -90,11 +90,11 @@
     col: 0
     width: 8
     height: 7
-  - name: <font color="#34A853" size="45" weight="bold"><i class="fa fa-tachometer"
-      aria-hidden="true"></i><strong> Top Performers </strong> <font color= "#4285F4"size="45">
-      Campaigns, Advertisers & Sites </font>
+  - name: <font color="#34A853" size="45" weight="bold"><i class="fa fa-eye" aria-hidden="true"></i><strong>
+      Top Performers </strong> <font color= "#4285F4"size="45"> Campaigns, Advertisers
+      & Sites </font>
     type: text
-    title_text: <font color="#34A853" size="4.5" weight="bold"><i class="fa fa-tachometer"
+    title_text: <font color="#34A853" size="4.5" weight="bold"><i class="fa fa-eye"
       aria-hidden="true"></i><strong> Top Performers </strong> <font color= "#4285F4"size="4.5">
       Campaigns, Advertisers & Sites </font>
     subtitle_text: ''
