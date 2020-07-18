@@ -1,6 +1,8 @@
-- dashboard: 3_data_health_check
-  title: "(3) Data Health Check"
+- dashboard: 4_data_health_check
+  title: "(4) Data Health Check"
   layout: newspaper
+  preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
+
   elements:
   - name: <font color="#137333" size="45" weight="bold"><i class="fa fa-users" aria-hidden="true"></i><strong>
       User Redactions </strong> <font color= "#4285F4"size="45"> Health Check </font>
