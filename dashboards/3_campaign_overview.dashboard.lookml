@@ -74,7 +74,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 4
+    row: 6
     col: 0
     width: 17
     height: 6
@@ -159,7 +159,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression.campaign_id
-    row: 10
+    row: 12
     col: 0
     width: 24
     height: 6
@@ -203,7 +203,7 @@
     series_types: {}
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 2
+    row: 4
     col: 18
     width: 6
     height: 2
@@ -247,7 +247,7 @@
     series_types: {}
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 0
+    row: 2
     col: 18
     width: 6
     height: 2
@@ -330,7 +330,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 16
+    row: 18
     col: 11
     width: 13
     height: 8
@@ -410,7 +410,7 @@
       impression.distinct_users: Users
     listen:
       Campaign ID: impression.campaign_id
-    row: 0
+    row: 2
     col: 0
     width: 6
     height: 2
@@ -484,7 +484,7 @@
     map_value_scale_clamp_max: 10000
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 41
+    row: 43
     col: 0
     width: 24
     height: 14
@@ -564,7 +564,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression.campaign_id
-    row: 4
+    row: 6
     col: 17
     width: 7
     height: 6
@@ -626,7 +626,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 16
+    row: 18
     col: 0
     width: 11
     height: 8
@@ -673,7 +673,7 @@
     value_format: 00.00%
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 0
+    row: 2
     col: 12
     width: 6
     height: 2
@@ -719,7 +719,7 @@
     series_types: {}
     listen:
       Campaign ID: click.campaign_id
-    row: 2
+    row: 4
     col: 6
     width: 6
     height: 2
@@ -765,7 +765,7 @@
     series_types: {}
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 2
+    row: 4
     col: 12
     width: 6
     height: 2
@@ -815,7 +815,7 @@
     value_format: 0.000,," M"
     listen:
       Campaign ID: impression.campaign_id
-    row: 2
+    row: 4
     col: 0
     width: 6
     height: 2
@@ -879,7 +879,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 24
+    row: 26
     col: 0
     width: 24
     height: 9
@@ -941,7 +941,7 @@
     defaults_version: 1
     listen:
       Campaign ID: impression_funnel.campaign_id
-    row: 33
+    row: 35
     col: 0
     width: 24
     height: 8
@@ -966,15 +966,27 @@
     defaults_version: 1
     listen:
       Campaign ID: impression.campaign_id
-    row: 0
+    row: 2
     col: 6
     width: 6
+    height: 2
+  - name: ''
+    type: text
+    title_text: ''
+    subtitle_text: ''
+    body_text: |-
+      <center>
+      <i>Note: This dashboard is displaying data on Campaign performance based on the past 60 days.<br>Please contact your Looker admin if this timeframe needs to be increased.</i>
+      </center>
+    row: 0
+    col: 0
+    width: 24
     height: 2
   filters:
   - name: Campaign ID
     title: Campaign ID
     type: field_filter
-    default_value: '10364418'
+    default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
