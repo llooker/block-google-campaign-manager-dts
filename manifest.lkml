@@ -1,26 +1,26 @@
 project_name: "block-google-campaign-manager-dts"
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block-google-campaign-manager-dts-config"
+  value: "cm-block-config"
   export: override_required
 }
 
 constant: CONNECTION {
   # value: "big-query-campaign-manager-dts"
-  value: "brick-layer"
+  value: "db-platform-sol-cm"
   export: override_required
 }
 
 constant: PROJECT_NAME {
-  value: "project-name"
+  value: "db-platform-sol"
   export: override_optional
 }
 constant: DATASET_NAME {
-  value: "dataset-name"
+  value: "Comcast8667"
   export: override_optional
 }
 constant: CAMPAIGN_MANAGER_ID {
-  value: "campaign-manager-id"
+  value: "8667"
   export: override_optional
 }
 

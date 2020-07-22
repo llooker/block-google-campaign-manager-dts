@@ -1,4 +1,14 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/derived_tables/user_campaign_facts.view"
+
+# PRESENTATION LAYER #
 view: user_campaign_facts {
+  extends: [user_campaign_facts_config]
+}
+
+
+# CORE LAYER #
+view: user_campaign_facts_core {
+  extension: required
   derived_table: {
 #     sql_trigger_value: SELECT COUNT(*) FROM ${impression_funnel.SQL_TABLE_NAME} ;;
     sql: SELECT

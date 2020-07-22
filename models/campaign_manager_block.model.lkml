@@ -5,10 +5,10 @@ include: "/**/*.view"
 include: "/dashboards/*.dashboard"
 
 persist_for: "24 hours"
+label: "z_FOR CM BLOCK DEV"
 
 explore: impression {
   label: "(1) Impressions"
-  view_name: impression
   view_label: "Impressions"
 
   sql_always_where: ${impression_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY)) ;;

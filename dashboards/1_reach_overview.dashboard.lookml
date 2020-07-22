@@ -6,7 +6,7 @@
   elements:
   - title: Users by Browser Type
     name: Users by Browser Type
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_pie
     fields: [impression.distinct_users, match_table_browsers.browser_platform]
@@ -81,7 +81,7 @@
     height: 7
   - title: Daily Users and Impressions
     name: Daily Users and Impressions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_line
     fields: [impression.distinct_users, impression.event_date, impression.count]
@@ -173,7 +173,7 @@
     height: 6
   - title: Users
     name: Users
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.distinct_users, impression.selected_comparison]
@@ -234,7 +234,7 @@
     height: 2
   - title: Impressions
     name: Impressions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.count_impressions, impression.selected_comparison]
@@ -294,7 +294,7 @@
     height: 2
   - title: Active Campaigns
     name: Active Campaigns
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.campaign_count, impression.selected_comparison]
@@ -350,7 +350,7 @@
     height: 2
   - title: Clicks
     name: Clicks
-    model: campaign_manager
+    model: campaign_manager_block
     explore: click
     type: single_value
     fields: [click.count, click.selected_comparison]
@@ -405,7 +405,7 @@
     height: 2
   - title: Conversions
     name: Conversions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: activity
     type: single_value
     fields: [activity.count, activity.selected_comparison]
@@ -462,7 +462,7 @@
     height: 2
   - title: Users by State
     name: Users by State
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_map
     fields: [impression.distinct_users, impression.country_code]
@@ -549,7 +549,7 @@
     height: 3
   - title: Cross Device Conversions
     name: Cross Device Conversions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: activity
     type: looker_column
     fields: [activity.count, activity.DBM_Device_Type_Name, activity.event_date]
@@ -617,7 +617,7 @@
     height: 7
   - title: 'AV: Eligible Imps'
     name: 'AV: Eligible Imps'
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.active_view_eligible_impressions]
@@ -645,7 +645,7 @@
     height: 2
   - title: 'AV: Measureable Imp'
     name: 'AV: Measureable Imp'
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.active_view_measurable_impressions]
@@ -672,7 +672,7 @@
     height: 2
   - title: Viewable Imps
     name: Viewable Imps
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.active_view_viewable_impressions]
@@ -713,7 +713,7 @@
     height: 2
   - title: Viewable Impressions
     name: Viewable Impressions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_column
     fields: [impression.event_date, impression.active_view_viewable_impressions, impression.DBM_Device_Type_Name]
@@ -817,7 +817,7 @@
     height: 2
   - title: Impressions Per User
     name: Impressions Per User
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.impressions_per_user, impression.selected_comparison]
@@ -848,7 +848,7 @@
     height: 2
   - title: Impressions Per User - Tiered
     name: Impressions Per User - Tiered
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_column
     fields: [impression.count, user_impression_facts.impressions_per_user_tiered]
@@ -921,7 +921,7 @@
       - seven
       - fourteen
       - thirty
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     listens_to_filters: []
     field: impression.comparison_type

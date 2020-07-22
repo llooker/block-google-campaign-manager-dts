@@ -6,7 +6,7 @@
   elements:
   - title: Campaign Metrics
     name: Campaign Metrics
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: looker_grid
     fields: [impression_funnel.campaign_id, match_table_campaigns.campaign_start_date,
@@ -80,7 +80,7 @@
     height: 6
   - title: Daily Campaign Impression Metrics
     name: Daily Campaign Impression Metrics
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_column
     fields: [impression.distinct_users, impression.event_date, impression.count]
@@ -165,7 +165,7 @@
     height: 6
   - title: Campaign Click Through Rate
     name: Campaign Click Through Rate
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: single_value
     fields: [impression_funnel.click_through_rate]
@@ -209,7 +209,7 @@
     height: 2
   - title: Campaign Conversion Rate
     name: Campaign Conversion Rate
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: single_value
     fields: [impression_funnel.conversion_rate]
@@ -253,7 +253,7 @@
     height: 2
   - title: Impression Funnel
     name: Impression Funnel
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: looker_column
     fields: [impression_funnel.total_impressions, impression_funnel.total_clicks,
@@ -336,7 +336,7 @@
     height: 8
   - title: Distinct Users Reached
     name: Distinct Users Reached
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.distinct_users]
@@ -416,7 +416,7 @@
     height: 2
   - title: Campaign Country Reach
     name: Campaign Country Reach
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: looker_map
     fields: [impression_funnel.total_impressions, impression_funnel.country_code]
@@ -490,7 +490,7 @@
     height: 14
   - title: Ad Breakdown
     name: Ad Breakdown
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: looker_pie
     fields: [impression.count, match_table_ads.ad_name]
@@ -570,7 +570,7 @@
     height: 6
   - title: Impressions, Clicks and Conversions by First Impression Date
     name: Impressions, Clicks and Conversions by First Impression Date
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: looker_line
     fields: [impression_funnel.total_impressions, impression_funnel.total_conversions,
@@ -632,7 +632,7 @@
     height: 8
   - title: Action Rate
     name: Action Rate
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: single_value
     fields: [impression_funnel.action_rate]
@@ -679,7 +679,7 @@
     height: 2
   - title: Clicks
     name: Clicks
-    model: campaign_manager
+    model: campaign_manager_block
     explore: click
     type: single_value
     fields: [click.count]
@@ -725,7 +725,7 @@
     height: 2
   - title: Total Conversions
     name: Total Conversions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: single_value
     fields: [impression_funnel.total_conversions]
@@ -771,7 +771,7 @@
     height: 2
   - title: Impressions
     name: Impressions
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.count_impressions]
@@ -821,7 +821,7 @@
     height: 2
   - title: Trending Action and Conversion Rates
     name: Trending Action and Conversion Rates
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: looker_line
     fields: [impression_funnel.first_ad_impression_date, impression_funnel.conversion_rate,
@@ -885,7 +885,7 @@
     height: 9
   - title: Count Users by Ad and First Impression Date
     name: Count Users by Ad and First Impression Date
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     type: looker_line
     fields: [impression_funnel.first_ad_impression_date, impression_funnel.count_users,
@@ -947,7 +947,7 @@
     height: 8
   - title: Average Impression Per User
     name: Average Impression Per User
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression
     type: single_value
     fields: [impression.impressions_per_user]
@@ -992,7 +992,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: campaign_manager
+    model: campaign_manager_block
     explore: impression_funnel
     listens_to_filters: []
     field: impression_funnel.campaign_id
