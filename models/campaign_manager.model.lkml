@@ -1,5 +1,4 @@
-# amend DB connection
-connection: "db-platform-sol-cm"
+connection: "@{CONNECTION}"
 
 # include all the views + dashboards
 include: "/**/*.view"
@@ -9,6 +8,7 @@ persist_for: "24 hours"
 
 explore: impression {
   label: "(1) Impressions"
+  view_name: impression
   view_label: "Impressions"
 
   sql_always_where: ${impression_raw} > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY)) ;;
@@ -43,14 +43,14 @@ explore: impression {
     relationship: many_to_one
   }
 
-  join: match_table_creatives_8667 {
+  join: match_table_creatives {
     view_label: "Creatives"
-    sql_on: ${impression.rendering_id} = ${match_table_creatives_8667.rendering_id} ;;
+    sql_on: ${impression.rendering_id} = ${match_table_creatives.rendering_id} ;;
     relationship: many_to_one
   }
-  join: match_table_operating_systems_8667 {
+  join: match_table_operating_systems {
     view_label: "Operating System"
-    sql_on: ${impression.operating_system_id_key} = ${match_table_operating_systems_8667.operating_system_id_key} ;;
+    sql_on: ${impression.operating_system_id_key} = ${match_table_operating_systems.operating_system_id_key} ;;
     relationship: many_to_one
   }
 

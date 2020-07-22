@@ -1,8 +1,16 @@
 include: "date_comparison.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/views/impression.view"
 
-view: impression {
-  sql_table_name: `db-platform-sol.Comcast8667.p_impression_8667` ;;
+### PRESENTATION LAYER ###
+view:  impression {
+  extends: [impression_config]
+}
+
+### CORE LAYER ###
+view: impression_core {
+  sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}`  ;;
   extends: [date_comparison]
+  extension: required
 
   dimension_group: impression {
     type: time
@@ -76,7 +84,7 @@ view: impression {
     link: {
       label: "View in Campaign Manager"
       icon_url: "https://seeklogo.com/images/G/google-campaign-manager-logo-03026740FA-seeklogo.com.png"
-      url: "https://www.google.com/dfa/trafficking/#/accounts/@{cm_network_id}/campaigns/{{value}}/explorer?"
+      url: "https://www.google.com/dfa/trafficking/#/accounts/@{CAMPAIGN_MANAGER_ID}/campaigns/{{value}}/explorer?"
     }
 
     # action: {

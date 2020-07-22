@@ -1,8 +1,17 @@
 include: "date_comparison.view"
+include: "//@{CONFIG_PROJECT_NAME}/views/click.view"
 
+### PRESENTATION LAYER ###
 view: click {
-  sql_table_name: `db-platform-sol.Comcast8667.p_click_8667` ;;
+  extends: [click_config]
+}
+
+
+#### CORE LAYER ####
+view: click_core {
+  sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_click_@{CAMPAIGN_MANAGER_ID}`;;
   extends: [date_comparison]
+  extension: required
 
 
   dimension_group: click {

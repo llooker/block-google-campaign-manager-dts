@@ -1,5 +1,5 @@
 view: match_table_ads {
-  sql_table_name: (select * from `db-platform-sol.Comcast8667.match_table_ads_8667` where _LATEST_DATE = _DATA_DATE) ;;
+  sql_table_name: (select * from `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_ads_@{CAMPAIGN_MANAGER_ID}` where _LATEST_DATE = _DATA_DATE) ;;
 
   dimension: ad_name {
     type: string

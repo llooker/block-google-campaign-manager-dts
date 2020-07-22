@@ -1,11 +1,10 @@
-view: match_table_operating_systems_8667 {
-#   sql_table_name: `db-platform-sol.Comcast8667.match_table_operating_systems_8667` ;;
+view: match_table_operating_systems {
 # De-Duping
   derived_table: {
     sql: SELECT
           CAST(Operating_System_ID AS INT64) AS Operating_System_ID_key,
           Operating_System
-        FROM `db-platform-sol.Comcast8667.match_table_operating_systems_8667`
+        FROM `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_operating_systems_@{CAMPAIGN_MANAGER_ID}`
         GROUP BY Operating_System_ID_key,Operating_System ;;
   }
 
