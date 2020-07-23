@@ -6,21 +6,21 @@ constant: CONFIG_PROJECT_NAME {
 }
 
 constant: CONNECTION {
-  # value: "big-query-campaign-manager-dts"
-  value: "db-platform-sol-cm"
+  value: "bigquery-campaign-manager-connection"
+  #value: "db-platform-sol-cm"
   export: override_required
 }
 
 constant: PROJECT_NAME {
-  value: "db-platform-sol"
+  value: "project-name"
   export: override_optional
 }
 constant: DATASET_NAME {
-  value: "Comcast8667"
+  value: "dataset-name"
   export: override_optional
 }
 constant: CAMPAIGN_MANAGER_ID {
-  value: "8667"
+  value: "id-number"
   export: override_optional
 }
 
