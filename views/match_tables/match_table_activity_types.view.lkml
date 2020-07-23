@@ -1,4 +1,15 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/match_tables/match_table_activity_types.view"
+
+
+########### PRESENTATION LAYER ###########
 view: match_table_activity_types {
+  extends: [match_table_activity_types_config]
+}
+
+
+########### CORE LAYER ###########
+view: match_table_activity_types_core {
+  extension: required
   sql_table_name: (SELECT * FROM TABLE_QUERY(
     --[ekoblov-test:dcm1684],
     [db-platform-sol:Comcast8667],

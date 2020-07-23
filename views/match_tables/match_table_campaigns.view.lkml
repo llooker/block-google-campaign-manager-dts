@@ -1,4 +1,12 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/match_tables/match_table_campaigns.view"
+
+########### PRESENTATION LAYER ###########
 view: match_table_campaigns {
+  extends: [match_table_campaigns_config]
+}
+
+########### CORE LAYER ###########
+view: match_table_campaigns_core {
   sql_table_name: (select * from `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_campaigns_@{CAMPAIGN_MANAGER_ID}` where _LATEST_DATE = _DATA_DATE) ;;
 
   dimension: advertiser_id {

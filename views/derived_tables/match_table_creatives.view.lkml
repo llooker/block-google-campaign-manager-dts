@@ -1,12 +1,12 @@
 include: "//@{CONFIG_PROJECT_NAME}/views/derived_tables/match_table_creatives.view"
 
-# PRESENTATION LAYER #
+###########  PRESENTATION LAYER ###########
 view: match_table_creatives {
   extends: [match_table_creatives_config]
 }
 
 
-# CORE LAYER #
+########### CORE LAYER ###########
 view: match_table_creatives_core {
   extension: required
 derived_table: {

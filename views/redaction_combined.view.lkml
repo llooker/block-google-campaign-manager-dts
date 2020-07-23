@@ -1,4 +1,12 @@
-view: redaction_combined {
+include: "//@{CONFIG_PROJECT_NAME}/views/redaction_combined.view"
+
+########### PRESENTATION LAYER ###########
+view:  redaction_combined {
+  extends: [redaction_combined_config]
+}
+
+########### CORE LAYER ###########
+view: redaction_combined_core {
   derived_table: {
     sql:  SELECT User_ID,"Impression" AS File_Type FROM `db-platform-sol.Comcast8667.p_impression_8667`
             WHERE {% condition partition %}_PARTITIONTIME {% endcondition %}

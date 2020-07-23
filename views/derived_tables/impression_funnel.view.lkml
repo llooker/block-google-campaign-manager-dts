@@ -1,12 +1,12 @@
 include: "//@{CONFIG_PROJECT_NAME}/views/derived_tables/impression_funnel.view"
 
-# PRESENTATION LAYER #
+########### PRESENTATION LAYER ###########
 view: impression_funnel {
   extends: [impression_funnel_config]
 }
 
 
-# CORE LAYER #
+########### CORE LAYER ###########
 view: impression_funnel_core {
   derived_table: {
 #     sql_trigger_value: SELECT CURRENT_DATE() ;;

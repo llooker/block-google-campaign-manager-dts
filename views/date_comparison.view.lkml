@@ -1,11 +1,11 @@
 include: "//@{CONFIG_PROJECT_NAME}/views/date_comparison.view"
 
-### PRESENTATION LAYER ###
+########### PRESENTATION LAYER ###########
 view: date_comparison {
   extends: [date_comparison_config]
 }
 
-### CORE LAYER ###
+########### CORE LAYER ###########
 view: date_comparison_core {
   extension: required
 
