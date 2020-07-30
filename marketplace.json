@@ -1,40 +1,42 @@
 {
-  "label": "Google Campaign Manager",
-  "category_label": "Models",
-  "branding": {
-    "image_uri": "",
-    "tagline": " "
-  },
-
-  "constants": {
-    "CONNECTION_NAME": {
-      "label": "Connection Name",
-      "value_constraint": "connection"
+    "label": "Google Campaign Manager",
+    "category_label": "Models",
+    "branding": {
+        "image_uri": "",
+        "tagline": " "
     },
-    "CONFIG_PROJECT_NAME": {
-      "label": "Config Project Name"
+    "constants": {
+        "CONNECTION_NAME": {
+            "label": "Connection Name",
+            "value_constraint": "connection"
+        },
+        "CONFIG_PROJECT_NAME": {
+            "label": "Config Project Name"
+        },
+        "DV360": {
+            "label": "DV360 Enabled Project?",
+            "value_constraints": [
+                "dv360_disabled",
+                "dv360_enabled"
+            ]
+        }
     },
-    "DV360": {
-      "label": "DV360 Enabled Project?",
-      "value_constraints": ["dv360_disabled", "dv360_enabled"]
-    },
-  },
-  "models": [
-    {
-      "name": "campaign_manager",
-      "connection_constant": "CONNECTION_NAME"
-    },
-    {
-      "name": "dv360",
-      "connection_constant": "CONNECTION_NAME"
-    }
-  ],
-  "auxiliary_projects": [
-    {
-      "git_uri": "git://github.com/llooker/block-google-campagin-manager-dts-config.git",
-      "git_ref": "7bdba08c4cd7feec515ec08ea21702d2f3afd555",
-      "label": "Google Campaign Manager Config",
-      "constant_name": "CONFIG_PROJECT_NAME"
-    }
-  ]
+    "models": [
+        {
+            "name": "campaign_manager",
+            "connection_constant": "CONNECTION_NAME"
+        },
+        {
+            "name": "dv360",
+            "connection_constant": "CONNECTION_NAME"
+        }
+    ],
+    "auxiliary_projects": [
+        {
+            "git_uri": "git://github.com/llooker/block-google-campagin-manager-dts-config.git",
+            "git_ref": "7bdba08c4cd7feec515ec08ea21702d2f3afd555",
+            "label": "Google Campaign Manager Config",
+            "constant_name": "CONFIG_PROJECT_NAME"
+        }
+    ]
 }
