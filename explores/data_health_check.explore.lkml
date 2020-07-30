@@ -1,5 +1,9 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/data_health_check.explore"
 
+explore: data_health_check {
+  extends: [data_health_check_config]
+}
+
 explore: data_health_check_core {
   view_name: redaction_combined
   extension: required

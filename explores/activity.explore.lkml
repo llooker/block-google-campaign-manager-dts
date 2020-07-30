@@ -1,5 +1,9 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/activity.explore"
 
+explore: activity {
+  extends: [activity_config]
+}
+
 explore: activity_core {
   view_name: activity
   extension: required

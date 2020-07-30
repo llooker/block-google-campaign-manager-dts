@@ -1,5 +1,9 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/click.explore"
 
+explore: click {
+  extends: [click_config]
+}
+
 explore: click_core {
   view_name: click
   extension: required
