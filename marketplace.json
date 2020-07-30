@@ -25,7 +25,7 @@
         {
             "name": "campaign_manager",
             "connection_constant": "CONNECTION_NAME"
-        },
+        }
     ],
     "auxiliary_projects": [
         {
