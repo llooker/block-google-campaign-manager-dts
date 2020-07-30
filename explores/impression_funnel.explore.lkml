@@ -1,5 +1,9 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/impression_funnel.explore"
 
+explore: impression_funnel {
+  extends: [impression_funnel_config]
+}
+
 explore: impression_funnel_core {
   view_name: impression_funnel
   extension: required

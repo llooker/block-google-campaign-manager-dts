@@ -24,10 +24,6 @@ explore: impression {
   extends: [impression_config]
 }
 
-explore: impression_funnel {
-  extends: [impression_config]
-}
-
 explore: activity {
   extends: [activity_config]
 }
