@@ -6,21 +6,29 @@ constant: CONFIG_PROJECT_NAME {
 }
 
 constant: CONNECTION {
-  value: "bigquery-campaign-manager-connection"
-  #value: "db-platform-sol-cm"
+  #value: "bigquery-campaign-manager-connection"
+  value: "db-platform-sol-cm"
   export: override_required
 }
 
 constant: PROJECT_NAME {
-  value: "project-name"
+  #value: "project-name"
+  value: "db-platform-sol"
   export: override_optional
 }
 constant: DATASET_NAME {
-  value: "dataset-name"
+  #value: "dataset-name"
+  value: "Comcast8667"
   export: override_optional
 }
 constant: CAMPAIGN_MANAGER_ID {
-  value: "id-number"
+  #value: "id-number"
+  value: "8667"
+  export: override_optional
+}
+
+constant: DV360 {
+  value: "dv360_enabled"
   export: override_optional
 }
 

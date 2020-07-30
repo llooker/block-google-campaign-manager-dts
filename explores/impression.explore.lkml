@@ -1,3 +1,5 @@
+include: "//@{CONFIG_PROJECT_NAME}/explores/impression.explore"
+
 explore: impression_core {
   view_name: impression
   extension: required
