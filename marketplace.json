@@ -2,7 +2,7 @@
     "label": "Google Campaign Manager",
     "category_label": "Models",
     "branding": {
-        "image_uri": "",
+        "image_uri": "https://marketplace-api.looker.com/block-icons/cm-dv360-icon.png",
         "tagline": " "
     },
     "constants": {
@@ -12,18 +12,11 @@
         },
         "CONFIG_PROJECT_NAME": {
             "label": "Config Project Name"
-        },
-        "DV360": {
-            "label": "DV360 Enabled Project?",
-            "value_constraints": [
-                "dv360_disabled",
-                "dv360_enabled"
-            ]
         }
     },
     "models": [
         {
-            "name": "campaign_manager",
+            "name": "campaign_manager_dv360_marketplace",
             "connection_constant": "CONNECTION_NAME"
         }
     ],

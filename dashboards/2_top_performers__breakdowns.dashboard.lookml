@@ -6,7 +6,7 @@
   elements:
   - title: Top 10 Campaigns
     name: Top 10 Campaigns
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_bar
     fields: [impression.distinct_users, impression.count, impression.campaign_id]
@@ -107,7 +107,7 @@
     height: 3
   - title: Top 10 Advertisers
     name: Top 10 Advertisers
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_bar
     fields: [impression.distinct_users, impression.count, impression.advertiser_id]
@@ -193,7 +193,7 @@
     height: 7
   - title: Top 10 Sites
     name: Top 10 Sites
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_bar
     fields: [impression.distinct_users, impression.count, impression.site_id_dcm]
@@ -292,7 +292,7 @@
     height: 3
   - title: Prospecting Breakdown
     name: Prospecting Breakdown
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_line
     fields: [impression.impressions_per_user, impression.event_date, impression.distinct_users]
@@ -354,7 +354,7 @@
     height: 6
   - title: Retargeting Breakdown
     name: Retargeting Breakdown
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_line
     fields: [impression.impressions_per_user, impression.event_date, impression.distinct_users]
@@ -416,7 +416,7 @@
     height: 6
   - title: Brand Breakdown
     name: Brand Breakdown
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_line
     fields: [impression.impressions_per_user, impression.event_date, impression.distinct_users]
@@ -503,7 +503,7 @@
       - seven
       - fourteen
       - thirty
-    model: campaign_manager_block
+    model: campaign_manager_dv360_marketplace
     explore: impression
     listens_to_filters: []
     field: impression.comparison_type

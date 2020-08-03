@@ -1,4 +1,4 @@
-project_name: "block-google-campaign-manager-dts"
+project_name: "block-google-campaign-manager-dv360-dts"
 
 constant: CONFIG_PROJECT_NAME {
   value: "cm-block-config"
@@ -24,11 +24,6 @@ constant: DATASET_NAME {
 constant: CAMPAIGN_MANAGER_ID {
   #value: "id-number"
   value: "8667"
-  export: override_optional
-}
-
-constant: DV360 {
-  value: "dv360_enabled"
   export: override_optional
 }
 

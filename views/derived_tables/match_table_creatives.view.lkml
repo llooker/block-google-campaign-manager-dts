@@ -24,7 +24,7 @@ derived_table: {
       PARTITION BY Rendering_ID
       ORDER BY _DATA_DATE DESC
     ) AS Recency
-  FROM `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_creatives_@{CAMPAIGN_MANAGER_ID`)
+  FROM `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_creatives_@{CAMPAIGN_MANAGER_ID}`)
   WHERE Recency = 1
  ;;
 }
