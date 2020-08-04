@@ -1,7 +1,7 @@
 - dashboard: 1_reach_overview
   title: "(1) Reach Overview"
   layout: newspaper
-  preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
+  #preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
 
   elements:
   - title: Users by Browser Type

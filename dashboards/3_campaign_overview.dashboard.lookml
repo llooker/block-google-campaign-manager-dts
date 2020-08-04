@@ -1,7 +1,7 @@
 - dashboard: 3_campaign_overview
   title: "(3) Campaign Overview"
   layout: newspaper
-  preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
+  #preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
 
   elements:
   - title: Campaign Metrics
