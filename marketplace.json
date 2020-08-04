@@ -1,0 +1,31 @@
+{
+    "label": "Google Campaign Manager + DV 360",
+    "category_label": "Models",
+    "branding": {
+        "image_uri": "https://marketplace-api.looker.com/block-icons/cm-dv360-icon.png",
+        "tagline": " "
+    },
+    "constants": {
+        "CONNECTION_NAME": {
+            "label": "Connection Name",
+            "value_constraint": "connection"
+        },
+        "CONFIG_PROJECT_NAME": {
+            "label": "Config Project Name"
+        }
+    },
+    "models": [
+        {
+            "name": "campaign_manager_dv360_marketplace",
+            "connection_constant": "CONNECTION_NAME"
+        }
+    ],
+    "auxiliary_projects": [
+        {
+            "git_uri": "git://github.com/llooker/block-google-campaign-manager-dv360-dts-config.git",
+            "git_ref": "16c8200d009ec98ed8df7da69013c7a291d73cdf",
+            "label": "Google Campaign Manager Config",
+            "constant_name": "CONFIG_PROJECT_NAME"
+        }
+    ]
+}
