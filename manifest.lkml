@@ -5,7 +5,7 @@ constant: CONFIG_PROJECT_NAME {
   export: override_optional
 }
 
-constant: CONNECTION {
+constant: CONNECTION_NAME {
   value: "your_bq_connection_name"
   export: override_required
 }

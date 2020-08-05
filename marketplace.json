@@ -10,7 +10,7 @@
     "CONFIG_PROJECT_NAME": {
       "label": "Config Project Name"
     },
-    "CONNECTION": {
+    "CONNECTION_NAME": {
       "label": "Connection Name",
       "value_constraint": "connection"
     }

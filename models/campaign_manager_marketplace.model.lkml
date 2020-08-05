@@ -1,4 +1,4 @@
-connection: "@{CONNECTION}"
+connection: "@{CONNECTION_NAME}"
 
 include: "/views/**/*"
 include: "/explores/**/*"
