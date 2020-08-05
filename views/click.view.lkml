@@ -11,7 +11,7 @@ view: click {
 ########### CORE LAYER ###########
 view: click_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_click_@{CAMPAIGN_MANAGER_ID}`;;
-  extends: [date_comparison]
+  extends: [date_comparison, click_dv360]
   extension: required
 
 
@@ -140,5 +140,6 @@ view: click_core {
   measure: count {
     type: count
     drill_fields: [match_table_campaigns.campaign_name, count]
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 }

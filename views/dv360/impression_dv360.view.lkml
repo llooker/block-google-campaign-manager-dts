@@ -3,6 +3,7 @@ view: impression_dv360 {
   ######################################
   ## DV360 METRICS ---> Start
   ######################################
+
   dimension: dbm_ad_position {
     view_label: "DV360"
     type: number
@@ -493,5 +494,4 @@ view: impression_dv360 {
   ######################################
   ## End <--- DV360 METRICS
   ######################################
-
 }

@@ -1,7 +1,7 @@
 - dashboard: 1_reach_overview
   title: "(1) Reach Overview"
   layout: newspaper
-  #preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
+  #preferred_viewer: dashboards-next
 
   elements:
   - title: Users by Browser Type
@@ -542,24 +542,23 @@
       Reach Overview </font>
     subtitle_text: How are my campaigns performing?
     body_text: "<center> <b>Recommended Action</b>\U0001f447 Drill into impressions\
-      \ and cross device conversions to get an overview of campaign performance.<center>"
+      \ and conversions to get an overview of campaign performance.<center>"
     row: 0
     col: 3
     width: 16
     height: 3
-  - title: Cross Device Conversions
-    name: Cross Device Conversions
+  - title: Conversions by Browser Type
+    name: Conversions by Browser Type
     model: campaign_manager_dv360_marketplace
     explore: activity
     type: looker_column
-    fields: [activity.count, activity.DBM_Device_Type_Name, activity.event_date]
-    pivots: [activity.DBM_Device_Type_Name]
+    fields: [activity.count, match_table_browsers.browser_platform, activity.event_date]
+    pivots: [match_table_browsers.browser_platform]
     fill_fields: [activity.event_date]
     filters:
-      activity.DBM_Device_Type_Name: "-Unknown"
       activity.event_type: CONVERSION
       activity.selected_comparison: "%Last%"
-    sorts: [activity.count desc 0, activity.DBM_Device_Type_Name]
+    sorts: [activity.count desc 0, match_table_browsers.browser_platform]
     limit: 500
     column_limit: 50
     query_timezone: America/Los_Angeles
@@ -592,9 +591,13 @@
     totals_color: "#808080"
     series_types: {}
     series_colors:
-      Computer - activity.count: "#34A853"
-      Smartphone - activity.count: "#137333"
-      Tablet - activity.count: "#FBBC04"
+      Firefox - activity.count: "#FBBC04"
+      Google Chrome - activity.count: "#34A853"
+      Safari (iPhone/iPod) - activity.count: "#4285F4"
+      Safari - activity.count: "#EA4335"
+      Other - activity.count: "#B31412"
+      Opera - activity.count: "#E8EAED"
+      Microsoft Internet Explorer - activity.count: "#137333"
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -716,12 +719,11 @@
     model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_column
-    fields: [impression.event_date, impression.active_view_viewable_impressions, impression.DBM_Device_Type_Name]
-    pivots: [impression.DBM_Device_Type_Name]
+    fields: [impression.event_date, impression.active_view_viewable_impressions, match_table_operating_systems.operating_system]
+    pivots: [match_table_operating_systems.operating_system]
     filters:
-      impression.DBM_Device_Type_Name: "-Unknown"
       impression.selected_comparison: "%Last%"
-    sorts: [impression.event_date, impression.DBM_Device_Type_Name]
+    sorts: [impression.event_date, match_table_operating_systems.operating_system]
     limit: 1000
     column_limit: 50
     query_timezone: America/Los_Angeles
@@ -773,6 +775,7 @@
       impression.active_view_viewable_impressions: "#72D16D"
       Smartphone - impression.active_view_viewable_impressions: "#185ABC"
       Tablet - impression.active_view_viewable_impressions: "#EA8600"
+      Microsoft Windows 10 - impression.active_view_viewable_impressions: "#34A853"
     show_null_points: true
     interpolation: linear
     value_labels: legend
@@ -808,9 +811,9 @@
     col: 12
     width: 12
     height: 8
-  - name: Cross Device Conversions & Browser Type
+  - name: Clicks, Conversions & Users by Browser Type
     type: text
-    title_text: Cross Device Conversions & Browser Type
+    title_text: Clicks, Conversions & Users by Browser Type
     row: 11
     col: 0
     width: 24

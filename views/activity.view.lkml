@@ -11,7 +11,7 @@ view: activity {
 ########### CORE LAYER ###########
 view: activity_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_activity_@{CAMPAIGN_MANAGER_ID}` ;;
-  extends: [date_comparison]
+  extends: [date_comparison, activity_dv360]
   extension: required
 
   dimension_group: activity {
@@ -175,24 +175,29 @@ view: activity_core {
 
 
   ### Measures
+
   measure: count {
     type: count
     drill_fields: [match_table_campaigns.campaign_name, count]
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: distinct_users {
     type: count_distinct
     sql: ${user_id} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: total_conversions {
     type: sum
     sql: ${TABLE}.Total_Conversions ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: total_revenue {
     type: sum
     sql: ${TABLE}.Total_Revenue ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
 }

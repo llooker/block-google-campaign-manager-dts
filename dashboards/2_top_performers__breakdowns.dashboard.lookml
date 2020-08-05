@@ -283,15 +283,13 @@
     subtitle_text: ''
     body_text: |-
       <center>
-      <b>Customization</b> Create custom classifications based on placement name, campaign tactic, etc <br>
-
-      <b>Recommended Action</b>👇 Drill into high level stats to get an additional level of granularity into underlying factors.</center>
+      <b>Recommended Action</b>👇 Edit the tiles below to create custom classifications based on placement name or campaign tactic. <br> Drill into these metrics to get an additional level of granularity into underlying factors.</center>
     row: 10
     col: 0
     width: 24
     height: 3
-  - title: Prospecting Breakdown
-    name: Prospecting Breakdown
+  - title: Breakdown (A)
+    name: Breakdown (A)
     model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_line
@@ -352,8 +350,8 @@
     col: 0
     width: 8
     height: 6
-  - title: Retargeting Breakdown
-    name: Retargeting Breakdown
+  - title: Breakdown (B)
+    name: Breakdown (B)
     model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_line
@@ -414,8 +412,8 @@
     col: 8
     width: 8
     height: 6
-  - title: Brand Breakdown
-    name: Brand Breakdown
+  - title: Breakdown (C)
+    name: Breakdown (C)
     model: campaign_manager_dv360_marketplace
     explore: impression
     type: looker_line

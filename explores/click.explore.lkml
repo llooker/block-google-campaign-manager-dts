@@ -1,9 +1,11 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/click.explore"
 
+########### PRESENTATION LAYER ###########
 explore: click {
   extends: [click_config]
 }
 
+########### CORE LAYER ###########
 explore: click_core {
   view_name: click
   extension: required
