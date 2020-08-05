@@ -1,32 +1,32 @@
 {
-    "label": "Google Campaign Manager",
-    "category_label": "Models",
-    "branding": {
-        "image_uri": "https://marketplace-api.looker.com/block-icons/block-campaign_manager.png",
-        "tagline": " ",
-        "badge": "Beta"
+  "label": "Google Campaign Manager",
+  "category_label": "Models",
+  "branding": {
+      "image_uri": "https://marketplace-api.looker.com/block-icons/block-campaign_manager.png",
+      "tagline": " ",
+      "badge": "Beta"
+  },
+  "constants": {
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
     },
-    "constants": {
-        "CONNECTION_NAME": {
-            "label": "Connection Name",
-            "value_constraint": "connection"
-        },
-        "CONFIG_PROJECT_NAME": {
-            "label": "Config Project Name"
-        }
-    },
-    "models": [
-        {
-            "name": "campaign_manager_marketplace",
-            "connection_constant": "CONNECTION_NAME"
-        }
-    ],
-    "auxiliary_projects": [
-        {
-            "git_uri": "git://github.com/llooker/block-google-campaign-manager-dts-config.git",
-            "git_ref": "5b0179fa182b4a639d61f844a25b99fa4f1579df",
-            "label": "Google Campaign Manager Config",
-            "constant_name": "CONFIG_PROJECT_NAME"
-        }
-    ]
+    "CONNECTION": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    }
+  },
+  "models": [
+      {
+          "name": "campaign_manager_marketplace",
+          "connection_constant": "CONNECTION_NAME"
+      }
+  ],
+  "auxiliary_projects": [
+      {
+          "git_uri": "git://github.com/llooker/block-google-campaign-manager-dts-config.git",
+          "git_ref": "5b0179fa182b4a639d61f844a25b99fa4f1579df",
+          "label": "Google Campaign Manager Config",
+          "constant_name": "CONFIG_PROJECT_NAME"
+      }
+  ]
 }
