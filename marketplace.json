@@ -4,7 +4,7 @@
     "branding": {
         "image_uri": "https://marketplace-api.looker.com/block-icons/block-campaign_manager.png",
         "tagline": " ",
-        "badge": "Beta",
+        "badge": "Beta"
     },
     "constants": {
         "CONNECTION_NAME": {
