@@ -12,6 +12,3 @@ map_layer: dma {
 }
 
 persist_for: "24 hours"
-
-
-label: "z_FOR CM BLOCK DEV"
