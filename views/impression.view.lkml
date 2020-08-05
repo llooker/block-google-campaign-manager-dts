@@ -1,17 +1,16 @@
 include: "date_comparison.view.lkml"
-include: "/views/dv360/impression_dv360.view"
 include: "//@{CONFIG_PROJECT_NAME}/views/impression.view"
 
 ########### PRESENTATION LAYER ###########
 view:  impression {
-  extends: [impression_config, impression_dv360]
+  extends: [impression_config]
 }
 
 
 ########### CORE LAYER ###########
 view: impression_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}` ;;
-  extends: [date_comparison, impression_dv360]
+  extends: [date_comparison]
 
   dimension_group: impression {
     type: time

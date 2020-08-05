@@ -16,7 +16,7 @@
     },
     "models": [
         {
-            "name": "campaign_manager_dv360_marketplace",
+            "name": "campaign_manager_marketplace",
             "connection_constant": "CONNECTION_NAME"
         }
     ],

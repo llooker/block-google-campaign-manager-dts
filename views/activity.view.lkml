@@ -1,17 +1,16 @@
 include: "date_comparison.view"
-include: "/views/dv360/activity_dv360.view"
 include: "//@{CONFIG_PROJECT_NAME}/views/activity.view.lkml"
 
 ########### PRESENTATION LAYER ###########
 view: activity {
-  extends: [activity_config, activity_dv360]
+  extends: [activity_config]
 }
 
 
 ########### CORE LAYER ###########
 view: activity_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_activity_@{CAMPAIGN_MANAGER_ID}` ;;
-  extends: [date_comparison, activity_dv360]
+  extends: [date_comparison]
   extension: required
 
   dimension_group: activity {

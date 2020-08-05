@@ -1,17 +1,16 @@
 include: "date_comparison.view"
-include: "/views/dv360/click_dv360.view"
 include: "//@{CONFIG_PROJECT_NAME}/views/click.view"
 
 ########### PRESENTATION LAYER ###########
 view: click {
-  extends: [click_config, click_dv360]
+  extends: [click_config]
 }
 
 
 ########### CORE LAYER ###########
 view: click_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_click_@{CAMPAIGN_MANAGER_ID}`;;
-  extends: [date_comparison, click_dv360]
+  extends: [date_comparison]
   extension: required
 
 
