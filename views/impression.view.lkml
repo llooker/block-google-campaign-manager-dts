@@ -7,6 +7,8 @@ view:  impression {
   extends: [impression_config, impression_dv360]
 }
 
+
+########### CORE LAYER ###########
 view: impression_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}` ;;
   extends: [date_comparison, impression_dv360]
@@ -27,22 +29,6 @@ view: impression_core {
     sql: concat(${ad_id}, ${advertiser_id}, ${user_id}, cast(${TABLE}.Event_Time as string), ${event_type}, ${rendering_id}) ;;
     hidden: yes
     primary_key: yes
-  }
-
-  measure: count_impressions {
-    type: count_distinct
-    sql: ${pk} ;;
-    drill_fields: [campaign_id, site_id_dcm]
-  }
-
-  measure: active_view_measurable_impressions {
-    type: sum
-    sql: ${TABLE}.Active_View_Measurable_Impressions ;;
-  }
-
-  measure: active_view_viewable_impressions {
-    type: sum
-    sql: ${TABLE}.Active_View_Viewable_Impressions ;;
   }
 
   #match_table_ads
@@ -193,9 +179,29 @@ view: impression_core {
 
     ### MEASURES
 
+    measure: count_impressions {
+      type: count_distinct
+      sql: ${pk} ;;
+      drill_fields: [campaign_id, site_id_dcm]
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
+    }
+
+    measure: active_view_measurable_impressions {
+      type: sum
+      sql: ${TABLE}.Active_View_Measurable_Impressions ;;
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
+    }
+
+    measure: active_view_viewable_impressions {
+      type: sum
+      sql: ${TABLE}.Active_View_Viewable_Impressions ;;
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
+    }
+
     measure: count {
       type: count
       drill_fields: [match_table_campaigns.campaign_name, site_id_dcm, impressions_per_user]
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
     }
 
     measure: distinct_users {
@@ -203,6 +209,7 @@ view: impression_core {
       type: count_distinct
       sql: ${user_id} ;;
       drill_fields: [match_table_campaigns.campaign_name, site_id_dcm, impressions_per_user]
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
     }
 
     measure: reach_percentage {
@@ -221,6 +228,7 @@ view: impression_core {
       type: count_distinct
       sql: ${campaign_id} ;;
       drill_fields: [match_table_campaigns.campaign_name, count, distinct_users, impressions_per_user]
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
     }
 
     measure: impressions_per_user {
@@ -234,6 +242,7 @@ view: impression_core {
       type: count_distinct
       sql: ${ad_id} ;;
       drill_fields: [match_table_ads.ad_name, match_table_ads.ad_type, count, distinct_users]
+      value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
     }
 
   }

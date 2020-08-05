@@ -8,13 +8,13 @@ view:  redaction_combined {
 ########### CORE LAYER ###########
 view: redaction_combined_core {
   derived_table: {
-    sql:  SELECT User_ID,"Impression" AS File_Type FROM `db-platform-sol.Comcast8667.p_impression_8667`
+    sql:  SELECT User_ID,"Impression" AS File_Type FROM `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}`
             WHERE {% condition partition %}_PARTITIONTIME {% endcondition %}
           UNION ALL
-          SELECT User_ID,"Click" AS File_Type FROM `db-platform-sol.Comcast8667.p_click_8667`
+          SELECT User_ID,"Click" AS File_Type FROM `@{PROJECT_NAME}.@{DATASET_NAME}.p_click_@{CAMPAIGN_MANAGER_ID}`
             WHERE {% condition partition %}_PARTITIONTIME {% endcondition %}
           UNION ALL
-          SELECT User_ID,"Activity" AS File_Type FROM `db-platform-sol.Comcast8667.p_activity_8667`
+          SELECT User_ID,"Activity" AS File_Type FROM `@{PROJECT_NAME}.@{DATASET_NAME}.p_activity_@{CAMPAIGN_MANAGER_ID}`
             WHERE {% condition partition %}_PARTITIONTIME {% endcondition %}
       ;;
   }
@@ -46,18 +46,15 @@ view: redaction_combined_core {
 
   measure: total_count {
     type: count
-#     sql: ${user_id} ;;
   }
 
   measure: total_redacted {
     type: count
-#     sql: ${user_id} ;;
     filters: [redacted: "yes"]
   }
 
   measure: total_filled {
     type: count
-#     sql: ${user_id} ;;
     filters: [filled: "yes"]
   }
 

@@ -1,9 +1,11 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/activity.explore"
 
+########### PRESENTATION LAYER ###########
 explore: activity {
   extends: [activity_config]
 }
 
+########### CORE LAYER ###########
 explore: activity_core {
   view_name: activity
   extension: required

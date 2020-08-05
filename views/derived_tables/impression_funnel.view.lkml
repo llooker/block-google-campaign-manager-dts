@@ -9,7 +9,7 @@ view: impression_funnel {
 ########### CORE LAYER ###########
 view: impression_funnel_core {
   derived_table: {
-#     sql_trigger_value: SELECT CURRENT_DATE() ;;
+    datagroup_trigger: new_day
     sql: select user_impression_metrics.*
                   , first_click
                   , latest_click
@@ -73,7 +73,7 @@ view: impression_funnel_core {
                 , sum(case when event_sub_type = 'POSTVIEW' THEN 1 ELSE 0 END) as count_postview_conversions
                 , sum(case when event_sub_type = 'POSTCLICK' THEN 1 ELSE 0 END) as count_postclick_conversions
                 , sum(total_revenue) as revenue
-                from ${activity.SQL_TABLE_NAME} -- `ekoblov-test.dcm1684.activity_1684`
+                from ${activity.SQL_TABLE_NAME}
                 where user_id <> '' and user_id is not null
                 and event_type = 'CONVERSION'
 
@@ -229,36 +229,43 @@ view: impression_funnel_core {
   measure: total_impressions {
     type: sum
     sql: ${count_impressions} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: total_clicks {
     type: sum
     sql: ${count_clicks} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: total_conversions {
     type: sum
     sql: ${count_conversions} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: total_post_view_conversions {
     type: sum
     sql: ${count_postview_conversions} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: total_post_click_conversions {
     type: sum
     sql: ${count_postclick_conversions} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: count_users {
     type: count_distinct
     sql: ${user_id} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
   }
 
   measure: count_users_who_clicked {
     type: count_distinct
     sql: ${user_id} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
 
     filters: {
       field: first_ad_click_date
@@ -269,6 +276,7 @@ view: impression_funnel_core {
   measure: count_users_converted {
     type: count_distinct
     sql: ${user_id} ;;
+    value_format:"[<1000]0.00;[<1000000]0.00,\" K\";0.00,,\" M\""
 
     filters: {
       field: first_ad_activity_date

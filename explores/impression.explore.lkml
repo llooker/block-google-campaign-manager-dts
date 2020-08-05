@@ -1,12 +1,12 @@
 include: "//@{CONFIG_PROJECT_NAME}/explores/impression.explore"
 
 
-
+########### PRESENTATION LAYER ###########
 explore: impression {
   extends: [impression_config]
 }
 
-
+########### CORE LAYER ###########
 explore: impression_core {
   view_name: impression
   extension: required

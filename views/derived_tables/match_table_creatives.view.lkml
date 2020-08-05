@@ -9,25 +9,30 @@ view: match_table_creatives {
 ########### CORE LAYER ###########
 view: match_table_creatives_core {
   extension: required
-derived_table: {
-  sql:
-  SELECT * FROM (
-  SELECT
-    _DATA_DATE,
-    _LATEST_DATE,
-    Advertiser_ID,
-    Rendering_ID,Creative_ID,Creative,Creative_Type,Creative_Image_URL,
-    Creative_Last_Modified_Date,
-    Creative_Version
-    Creative_Pixel_Size,
-    ROW_NUMBER() OVER(
-      PARTITION BY Rendering_ID
-      ORDER BY _DATA_DATE DESC
-    ) AS Recency
-  FROM `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_creatives_@{CAMPAIGN_MANAGER_ID}`)
-  WHERE Recency = 1
+  derived_table: {
+    sql:
+      SELECT * FROM (
+        SELECT
+          _DATA_DATE,
+          _LATEST_DATE,
+          Advertiser_ID,
+          Rendering_ID,
+          Creative_ID,
+          Creative,
+          Creative_Type,
+          Creative_Image_URL,
+          Creative_Last_Modified_Date,
+          Creative_Version
+          Creative_Pixel_Size,
+          ROW_NUMBER() OVER(
+            PARTITION BY Rendering_ID
+            ORDER BY _DATA_DATE DESC
+          ) AS Recency
+        FROM `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_creatives_@{CAMPAIGN_MANAGER_ID}`
+      )
+        WHERE Recency = 1
  ;;
-}
+  }
 
   dimension_group: _data {
     type: time

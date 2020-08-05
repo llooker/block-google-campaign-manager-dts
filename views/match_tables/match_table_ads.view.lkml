@@ -51,4 +51,5 @@ view: match_table_ads_core {
     type: string
     sql: ${TABLE}.Creative_Pixel_Size ;;
   }
+
 }

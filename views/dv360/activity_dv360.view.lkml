@@ -2,8 +2,7 @@ view: activity_dv360 {
   ######################################
   ## DV360 METRICS ---> Start
   ######################################
-
-  dimension: dbm_ad_position {
+   dimension: dbm_ad_position {
     view_label: "DV360"
     type: number
     sql: ${TABLE}.DBM_Ad_Position ;;
@@ -229,13 +228,13 @@ view: activity_dv360 {
     view_label: "DV360"
     type: string
     sql: CASE
-        WHEN ${dbm_device_type} = 0 THEN "Computer"
-        WHEN ${dbm_device_type} = 1 THEN "Other"
-        WHEN ${dbm_device_type} = 2 THEN "Smartphone"
-        WHEN ${dbm_device_type} = 3 THEN "Tablet"
-        WHEN ${dbm_device_type} = 4 THEN "Smart TV"
-        ELSE 'Unknown'
-       END ;;
+            WHEN ${dbm_device_type} = 0 THEN "Computer"
+            WHEN ${dbm_device_type} = 1 THEN "Other"
+            WHEN ${dbm_device_type} = 2 THEN "Smartphone"
+            WHEN ${dbm_device_type} = 3 THEN "Tablet"
+            WHEN ${dbm_device_type} = 4 THEN "Smart TV"
+            ELSE 'Unknown'
+           END ;;
   }
 
   dimension: dbm_exchange_id {

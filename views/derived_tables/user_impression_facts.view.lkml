@@ -10,17 +10,16 @@ view: user_impression_facts {
 view: user_impression_facts_core {
   extension: required
   derived_table: {
+    datagroup_trigger: new_day
     sql:
-    SELECT
-  impression.User_ID  AS  user_id,
-  impression.Campaign_ID  AS campaign_id,
-  COUNT(DISTINCT (concat(impression.Ad_ID, impression.Advertiser_ID, impression.User_ID, cast(impression.Event_Time as string), impression.Event_Type, impression.Rendering_ID)) ) AS count_impressions
-FROM `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}` AS impression
-LEFT JOIN (select * from `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_campaigns_@{CAMPAIGN_MANAGER_ID}` where _LATEST_DATE = _DATA_DATE)  AS match_table_campaigns ON impression.Campaign_ID = match_table_campaigns.Campaign_ID
-WHERE impression._PARTITIONTIME > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -7 DAY))
-GROUP BY 1,2
-    ;;
-
+      SELECT
+        impression.User_ID  AS  user_id,
+        impression.Campaign_ID  AS campaign_id,
+        COUNT(DISTINCT (concat(impression.Ad_ID, impression.Advertiser_ID, impression.User_ID, cast(impression.Event_Time as string), impression.Event_Type, impression.Rendering_ID)) ) AS count_impressions,
+        (COUNT(DISTINCT (concat(impression.Ad_ID, impression.Advertiser_ID, impression.User_ID, cast(impression.Event_Time as string), impression.Event_Type, impression.Rendering_ID)) ))/NULLIF((COUNT(DISTINCT impression.User_ID )),0)  AS impressions_per_user
+      FROM `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}` AS impression
+      WHERE impression._PARTITIONTIME > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY))
+      GROUP BY 1,2 ;;
   }
 
   dimension: user_id {
@@ -43,7 +42,7 @@ GROUP BY 1,2
     label: "Impressions Per User - Tiered"
     type: tier
     style: integer
-    tiers: [1,6,11,16,21,26]
+    tiers: [1,10,20,30,40,50]
     sql: ${count_impressions} ;;
   }
 
