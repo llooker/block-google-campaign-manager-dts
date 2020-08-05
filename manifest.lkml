@@ -1,4 +1,4 @@
-project_name: "block-google-campaign-manager-dv360-dts"
+project_name: "block-google-campaign-manager-dts"
 
 constant: CONFIG_PROJECT_NAME {
   value: "block-google-campaign-manager-dts-config"
