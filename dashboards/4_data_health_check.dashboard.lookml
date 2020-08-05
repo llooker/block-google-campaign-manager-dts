@@ -21,7 +21,7 @@
     height: 4
   - title: Total User IDs
     name: Total User IDs
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     type: single_value
     fields: [redaction_combined.total_count]
@@ -48,7 +48,7 @@
     height: 2
   - title: Total Filled
     name: Total Filled
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     type: single_value
     fields: [redaction_combined.total_filled]
@@ -75,7 +75,7 @@
     height: 2
   - title: Total Redacted
     name: Total Redacted
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     type: single_value
     fields: [redaction_combined.total_redacted]
@@ -102,7 +102,7 @@
     height: 2
   - title: Redaction Rate
     name: Redaction Rate
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     type: single_value
     fields: [redaction_combined.redaction_rate]
@@ -134,7 +134,7 @@
     height: 6
   - title: Redaction By File Type
     name: Redaction By File Type
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     type: looker_pie
     fields: [redaction_combined.redaction_rate, redaction_combined.file_type]
@@ -206,7 +206,7 @@
     default_value: 7 days
     allow_multiple_values: true
     required: false
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     listens_to_filters: []
     field: redaction_combined.partition
@@ -220,7 +220,7 @@
       type: advanced
       display: popover
       options: []
-    model: campaign_manager_dv360_marketplace
+    model: campaign_manager_marketplace
     explore: data_health_check
     listens_to_filters: []
     field: redaction_combined.file_type
