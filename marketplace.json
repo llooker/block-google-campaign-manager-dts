@@ -3,7 +3,7 @@
   "category_label": "Models",
   "branding": {
       "image_uri": "https://marketplace-api.looker.com/block-icons/block-campaign_manager.png",
-      "tagline": " ",
+      "tagline": "Flood light on campaign impressions, spend and more.",
       "badge": "Beta"
   },
   "constants": {
