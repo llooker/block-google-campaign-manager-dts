@@ -16,6 +16,8 @@
 
 ### Campaign Manager Data Structure and Schema
 
+This block version is based off of Data Transfer v2.0. Please note that fields for "Landing Page URL ID", "Impression ID" and "Referrer URL" are not included in this block. These fields can be added into the config files if needed.
+
 Campaign Manager data is exported through [Transfer Services](https://cloud.google.com/bigquery-transfer/docs/doubleclick-campaign-transfer) in the format of three flat tables (a single file for impressions, clicks, and activities). All Data Transfer Files are stored as comma separated values (CSV).
 
 Filenames are a combination of dcm ID (like account, or floodlight), data transfer type (impression, click, activity, or rich_media), the date and hour of the processed file (YYYYMMDDHH), the day the report was generated (YYYYMMDD), the time the report was generated (HHMMSS), and the execution ID of the report separated by underscores. A more detailed description of the Data Transfer customisation and fields can be found [here](https://developers.google.com/doubleclick-advertisers/dtv2/reference/file-format).

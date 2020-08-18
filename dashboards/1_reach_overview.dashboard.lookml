@@ -1,7 +1,7 @@
 - dashboard: 1_reach_overview
   title: "(1) Reach Overview"
   layout: newspaper
-  #preferred_viewer: dashboards-next
+  # preferred_viewer: dashboards-next
 
   elements:
   - title: Users by Browser Type
@@ -75,6 +75,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 15
     col: 12
     width: 12
@@ -167,6 +168,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 5
     col: 0
     width: 12
@@ -228,6 +230,7 @@
     hidden_fields: []
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 3
     col: 0
     width: 8
@@ -288,6 +291,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 3
     col: 8
     width: 8
@@ -344,6 +348,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 13
     col: 16
     width: 8
@@ -399,6 +404,7 @@
     defaults_version: 1
     listen:
       Date Range: click.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 13
     col: 0
     width: 8
@@ -456,6 +462,7 @@
     defaults_version: 1
     listen:
       Date Range: activity.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 13
     col: 8
     width: 8
@@ -529,6 +536,7 @@
     title_hidden: true
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 24
     col: 0
     width: 12
@@ -614,6 +622,7 @@
     interpolation: linear
     listen:
       Date Range: activity.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 15
     col: 0
     width: 12
@@ -642,6 +651,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 24
     col: 12
     width: 4
@@ -669,6 +679,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 24
     col: 16
     width: 4
@@ -696,6 +707,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 24
     col: 20
     width: 4
@@ -807,6 +819,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 26
     col: 12
     width: 12
@@ -845,6 +858,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 3
     col: 16
     width: 8
@@ -892,6 +906,7 @@
     defaults_version: 1
     listen:
       Date Range: impression.comparison_type
+      Advertiser Name: match_table_advertisers.advertiser_name
     row: 5
     col: 12
     width: 12
@@ -928,3 +943,13 @@
     explore: impression
     listens_to_filters: []
     field: impression.comparison_type
+  - name: Advertiser Name
+    title: Advertiser Name
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    model: campaign_manager_marketplace
+    explore: impression
+    listens_to_filters: []
+    field: match_table_advertisers.advertiser_name

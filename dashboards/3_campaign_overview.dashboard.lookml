@@ -1,12 +1,12 @@
 - dashboard: 3_campaign_overview
   title: "(3) Campaign Overview"
   layout: newspaper
-  #preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
+  # preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
 
   elements:
   - title: Campaign Metrics
     name: Campaign Metrics
-    model: campaign_manager_marketplace
+    model: campaign_manager_marketplace_marketplace
     explore: impression_funnel
     type: looker_grid
     fields: [impression_funnel.campaign_id, match_table_campaigns.campaign_start_date,
@@ -80,7 +80,7 @@
     height: 6
   - title: Daily Campaign Impression Metrics
     name: Daily Campaign Impression Metrics
-    model: campaign_manager_marketplace
+    model: campaign_manager_marketplace_marketplace
     explore: impression
     type: looker_column
     fields: [impression.distinct_users, impression.event_date, impression.count]
@@ -165,7 +165,7 @@
     height: 6
   - title: Campaign Click Through Rate
     name: Campaign Click Through Rate
-    model: campaign_manager_marketplace
+    model: campaign_manager_marketplace_marketplace
     explore: impression_funnel
     type: single_value
     fields: [impression_funnel.click_through_rate]
@@ -851,7 +851,7 @@
     point_style: none
     show_value_labels: false
     label_density: 25
-    x_axis_scale: ordinal
+    x_axis_scale: auto
     y_axis_combined: false
     show_null_points: true
     interpolation: linear
