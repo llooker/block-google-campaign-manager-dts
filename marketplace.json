@@ -24,7 +24,7 @@
   "auxiliary_projects": [
       {
           "git_uri": "git://github.com/llooker/block-google-campaign-manager-dts-config.git",
-          "git_ref": "bcad5c32ecacfe22dc1e88526156e251bc2a277a",
+          "git_ref": "98d8ffa2f494a6432df83521636455a9f3da8f46",
           "label": "Google Campaign Manager Config",
           "constant_name": "CONFIG_PROJECT_NAME"
       }
