@@ -14,4 +14,4 @@ map_layer: dma {
 persist_for: "24 hours"
 
 
-label: "Block Google Campaign Manager"
+label: "Block Campaign Manager 360"
