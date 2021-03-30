@@ -1,7 +1,7 @@
 - dashboard: 1_reach_overview
   title: "(1) Reach Overview"
   layout: newspaper
-  # preferred_viewer: dashboards-next
+  preferred_viewer: dashboards-next
 
   elements:
   - title: Users by Browser Type

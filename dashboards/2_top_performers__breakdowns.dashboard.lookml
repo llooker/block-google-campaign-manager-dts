@@ -1,7 +1,7 @@
 - dashboard: 2_top_performers__breakdowns
   title: "(2) Top Performers & Breakdowns"
   layout: newspaper
-  #preferred_viewer: dashboards-next # Dashboards Next set as default from 7.12 release
+  preferred_viewer: dashboards-next
 
   elements:
   - title: Top 10 Campaigns
