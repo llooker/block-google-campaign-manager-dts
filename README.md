@@ -31,8 +31,3 @@ It is strongly recommended that you load all match tables into your warehouse to
  * Within the ```(2) Top Performers & Breakdowns``` dashboard there are three breakdown tiles that are configurable. It is recommended to import this dashboard and edit these tiles to create custom classifications based on placement name or campaign tactic. Once configured, you  can drill into these metrics to get an additional level of granularity into underlying factors.
 
 <br>
-
-### What if I find an error? Suggestions for improvements?
-
-What if I find an error? Suggestions for improvements?
-Great! Blocks were designed for continuous improvement through the help of the entire Looker community, and we'd love your input. To log an error or improvement recommendations, simply create a "New Issue" in the corresponding [Github repo](https://github.com/llooker/block-google-campaign-manager-dts) for this Block. Please be as detailed as possible in your explanation, and we'll address it as quick as we can.
