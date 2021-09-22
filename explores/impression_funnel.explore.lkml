@@ -1,14 +1,7 @@
-include: "//@{CONFIG_PROJECT_NAME}/explores/impression_funnel.explore"
+include: "/views/**/*.view"
 
-########### PRESENTATION LAYER ###########
 explore: impression_funnel {
-  extends: [impression_funnel_config]
-}
-
-########### CORE LAYER ###########
-explore: impression_funnel_core {
   view_name: impression_funnel
-  extension: required
   label: "(2) Impression Funnel"
 
   sql_always_where: TIMESTAMP(${first_ad_impression_date}) > TIMESTAMP(DATE_ADD(CURRENT_DATE, INTERVAL -60 DAY))  ;;

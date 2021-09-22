@@ -1,18 +1,8 @@
 include: "date_comparison.view"
-include: "//@{CONFIG_PROJECT_NAME}/views/click.view"
 
-########### PRESENTATION LAYER ###########
 view: click {
-  extends: [click_config]
-}
-
-
-########### CORE LAYER ###########
-view: click_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_click_@{CAMPAIGN_MANAGER_ID}`;;
   extends: [date_comparison]
-  extension: required
-
 
   dimension_group: click {
     type: time

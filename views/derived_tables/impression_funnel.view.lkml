@@ -1,13 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/derived_tables/impression_funnel.view"
-
-########### PRESENTATION LAYER ###########
 view: impression_funnel {
-  extends: [impression_funnel_config]
-}
-
-
-########### CORE LAYER ###########
-view: impression_funnel_core {
   derived_table: {
     datagroup_trigger: new_day
     sql: select user_impression_metrics.*

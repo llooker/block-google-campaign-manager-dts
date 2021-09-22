@@ -1,14 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/derived_tables/match_table_operating_systems.view"
-
-########### PRESENTATION LAYER ###########
 view: match_table_operating_systems {
-  extends: [match_table_operating_systems_config]
-}
-
-
-########### CORE LAYER ###########
-view: match_table_operating_systems_core {
-  extension: required
 # De-Duping
   derived_table: {
     sql: SELECT
