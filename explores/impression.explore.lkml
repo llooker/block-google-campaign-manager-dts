@@ -1,15 +1,7 @@
-include: "//@{CONFIG_PROJECT_NAME}/explores/impression.explore"
+include: "/views/**/*.view"
 
-
-########### PRESENTATION LAYER ###########
 explore: impression {
-  extends: [impression_config]
-}
-
-########### CORE LAYER ###########
-explore: impression_core {
   view_name: impression
-  extension: required
   label: "(1) Impressions"
   view_label: "Impressions"
 

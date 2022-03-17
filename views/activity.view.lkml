@@ -1,17 +1,8 @@
 include: "date_comparison.view"
-include: "//@{CONFIG_PROJECT_NAME}/views/activity.view.lkml"
 
-########### PRESENTATION LAYER ###########
 view: activity {
-  extends: [activity_config]
-}
-
-
-########### CORE LAYER ###########
-view: activity_core {
   sql_table_name: `@{PROJECT_NAME}.@{DATASET_NAME}.p_activity_@{CAMPAIGN_MANAGER_ID}` ;;
   extends: [date_comparison]
-  extension: required
 
   dimension_group: activity {
     type: time

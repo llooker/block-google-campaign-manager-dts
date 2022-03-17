@@ -1,14 +1,7 @@
-include: "//@{CONFIG_PROJECT_NAME}/explores/click.explore"
+include: "/views/**/*.view"
 
-########### PRESENTATION LAYER ###########
 explore: click {
-  extends: [click_config]
-}
-
-########### CORE LAYER ###########
-explore: click_core {
   view_name: click
-  extension: required
   label: "(4) Clicks"
   view_label: "Clicks"
 

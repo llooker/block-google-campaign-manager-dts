@@ -1,14 +1,7 @@
-include: "//@{CONFIG_PROJECT_NAME}/explores/activity.explore"
+include: "/views/**/*.view"
 
-########### PRESENTATION LAYER ###########
 explore: activity {
-  extends: [activity_config]
-}
-
-########### CORE LAYER ###########
-explore: activity_core {
   view_name: activity
-  extension: required
   label: "(3) Activities"
   view_label: "Activities"
 
