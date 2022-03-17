@@ -1,12 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/redaction_combined.view"
-
-########### PRESENTATION LAYER ###########
 view:  redaction_combined {
-  extends: [redaction_combined_config]
-}
-
-########### CORE LAYER ###########
-view: redaction_combined_core {
   derived_table: {
     sql:  SELECT User_ID,"Impression" AS File_Type FROM `@{PROJECT_NAME}.@{DATASET_NAME}.p_impression_@{CAMPAIGN_MANAGER_ID}`
             WHERE {% condition partition %}_PARTITIONTIME {% endcondition %}

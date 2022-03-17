@@ -1,14 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/derived_tables/user_campaign_facts.view"
-
-########### PRESENTATION LAYER ###########
 view: user_campaign_facts {
-  extends: [user_campaign_facts_config]
-}
-
-
-########### CORE LAYER ###########
-view: user_campaign_facts_core {
-  extension: required
   derived_table: {
     datagroup_trigger: new_day
     sql: SELECT

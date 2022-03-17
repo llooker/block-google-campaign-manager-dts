@@ -1,16 +1,5 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/match_tables/match_table_activity_types.view"
-
-
-########### PRESENTATION LAYER ###########
 view: match_table_activity_types {
-  extends: [match_table_activity_types_config]
-}
-
-
-########### CORE LAYER ###########
-view: match_table_activity_types_core {
-  extension: required
-  sql_table_name: (select * from `@{CONFIG_PROJECT_NAME}.@{DATASET_NAME}.match_table_activity_types_@{CAMPAIGN_MANAGER_ID}` where _LATEST_DATE = _DATA_DATE) ;;
+  sql_table_name: (select * from `@{PROJECT_NAME}.@{DATASET_NAME}.match_table_activity_types_@{CAMPAIGN_MANAGER_ID}` where _LATEST_DATE = _DATA_DATE) ;;
 
   dimension: activity_group {
     type: string

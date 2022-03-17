@@ -1,13 +1,8 @@
 project_name: "block-google-campaign-manager-dts"
 
-constant: CONFIG_PROJECT_NAME {
-  value: "block-google-campaign-manager-dts-config"
-  export: override_optional
-}
-
 constant: CONNECTION_NAME {
   value: "your_bq_connection_name"
-  export: override_required
+  export: override_optional
 }
 
 constant: PROJECT_NAME {
@@ -21,9 +16,4 @@ constant: DATASET_NAME {
 constant: CAMPAIGN_MANAGER_ID {
   value: "your_campaign_manager_id"
   export: override_optional
-}
-
-
-local_dependency: {
-  project: "@{CONFIG_PROJECT_NAME}"
 }

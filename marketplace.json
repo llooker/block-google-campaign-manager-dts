@@ -7,9 +7,6 @@
       "badge": "Beta"
   },
   "constants": {
-    "CONFIG_PROJECT_NAME": {
-      "label": "Config Project Name"
-    },
     "CONNECTION_NAME": {
       "label": "Connection Name",
       "value_constraint": "connection"
@@ -17,16 +14,8 @@
   },
   "models": [
       {
-          "name": "campaign_manager_marketplace",
+          "name": "campaign_manager_marketplace_v2",
           "connection_constant": "CONNECTION_NAME"
-      }
-  ],
-  "auxiliary_projects": [
-      {
-          "git_uri": "git://github.com/llooker/block-google-campaign-manager-dts-config.git",
-          "git_ref": "98d8ffa2f494a6432df83521636455a9f3da8f46",
-          "label": "Campaign Manager 360 Config",
-          "constant_name": "CONFIG_PROJECT_NAME"
       }
   ]
 }

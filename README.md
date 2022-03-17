@@ -28,6 +28,8 @@ It is strongly recommended that you load all match tables into your warehouse to
 
 ### Customizations
 
- * Within the ```(2) Top Performers & Breakdowns``` dashboard there are three breakdown tiles that are configurable. It is recommended to import this dashboard and edit these tiles to create custom classifications based on placement name or campaign tactic. Once configured, you  can drill into these metrics to get an additional level of granularity into underlying factors.
+- This block uses refinements for customization. For more information on using refinements to customize marketplace blocks, please see [this link](https://docs.looker.com/data-modeling/marketplace/customize-blocks#marketplace_blocks_that_use_refinements).
+- Refinements can be used to add new content or modify existing content on views and explores without the need to copy individual LookML elements into a new project.
+-  Within the ```(2) Top Performers & Breakdowns``` dashboard there are three breakdown tiles that are configurable. It is recommended to import this dashboard and edit these tiles to create custom classifications based on placement name or campaign tactic. Once configured, you  can drill into these metrics to get an additional level of granularity into underlying factors.
 
 <br>
